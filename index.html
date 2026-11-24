@@ -1,0 +1,3206 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>HAUNTED WINTER — Зимний бал 2026 | Знакомства гостей</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Шрифты Cinzel (торжественные заголовки) и Manrope (интерфейс) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              obsidian: "#06080F",
+              midnight: "#0F1423",
+              ivory: "#F5F7FA",
+              silverFrost: "#A8B2C8",
+              champagne: "#D4AF7A",
+              crimsonRose: "#E05263",
+            },
+            fontFamily: {
+              cinzel: ["Cinzel", "serif"],
+              sans: ["Manrope", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #06080f;
+        color: #f5f7fa;
+        font-family: "Manrope", sans-serif;
+        overflow: hidden;
+      }
+
+      /* Тонкий кастомный скроллбар */
+      .custom-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scroll::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scroll::-webkit-scrollbar-thumb {
+        background: rgba(212, 175, 122, 0.28);
+        border-radius: 9999px;
+      }
+
+      /* Матовые стеклянные карточки ночного неба */
+      .glass-panel {
+        background: rgba(15, 20, 35, 0.78);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid rgba(212, 175, 122, 0.22);
+      }
+
+      .glass-pill {
+        background: rgba(255, 255, 255, 0.035);
+        border: 1px solid rgba(212, 175, 122, 0.18);
+        transition: all 0.2s ease;
+      }
+
+      .glass-pill:hover {
+        border-color: rgba(212, 175, 122, 0.5);
+        background: rgba(212, 175, 122, 0.09);
+      }
+
+      .glass-pill.active {
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 122, 0.24),
+          rgba(245, 247, 250, 0.08)
+        );
+        border-color: #d4af7a;
+        color: #f5f7fa;
+        box-shadow: 0 0 18px rgba(212, 175, 122, 0.18);
+      }
+
+      /* Металлический градиент заголовка HAUNTED WINTER */
+      .luxury-title {
+        background: linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #e2e8f0 48%,
+          #d4af7a 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 4px 28px rgba(212, 175, 122, 0.22);
+      }
+
+      /* Главная кнопка оттенка шампань */
+      .btn-champagne {
+        background: linear-gradient(135deg, #d4af7a 0%, #b78e54 100%);
+        color: #06080f;
+        font-weight: 600;
+        transition: all 0.22s ease;
+        box-shadow: 0 8px 24px rgba(212, 175, 122, 0.24);
+      }
+
+      .btn-champagne:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 28px rgba(212, 175, 122, 0.36);
+      }
+
+      .btn-champagne:active {
+        transform: translateY(0);
+      }
+
+      /* Кнопка удаления / бана в стиле Crimson Rose */
+      .btn-crimson {
+        background: rgba(224, 82, 99, 0.14);
+        border: 1px solid rgba(224, 82, 99, 0.42);
+        color: #ff8c9a;
+        transition: all 0.2s ease;
+      }
+
+      .btn-crimson:hover {
+        background: rgba(224, 82, 99, 0.26);
+        border-color: #e05263;
+        color: #ffffff;
+      }
+
+      /* Карточка свайпа */
+      .swipe-card {
+        touch-action: none;
+        user-select: none;
+        will-change: transform, opacity;
+      }
+
+      .swipe-card.animating {
+        transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.35s ease;
+      }
+
+      @keyframes starPulse {
+        0%,
+        100% {
+          opacity: 0.65;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.16);
+        }
+      }
+
+      .star-twinkle {
+        animation: starPulse 3.4s ease-in-out infinite;
+      }
+
+      @keyframes modalFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95) translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      .modal-animate {
+        animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+    </style>
+  </head>
+  <body class="bg-obsidian text-ivory flex items-center justify-center">
+    <!-- Фоновый Canvas со снегопадом и звёздным сиянием -->
+    <canvas
+      id="winter-canvas"
+      class="fixed inset-0 w-full h-full pointer-events-none z-0"
+    ></canvas>
+
+    <!-- Мягкое верхнее сияние -->
+    <div
+      class="fixed top-0 left-1/2 -translate-x-1/2 w-[540px] h-[280px] rounded-full pointer-events-none z-0 opacity-25 blur-3xl"
+      style="
+        background: radial-gradient(
+          circle,
+          rgba(212, 175, 122, 0.38) 0%,
+          rgba(168, 178, 200, 0.08) 55%,
+          transparent 80%
+        );
+      "
+    ></div>
+
+    <!-- Главный мобильно-центрированный контейнер -->
+    <div
+      id="app-shell"
+      class="relative z-10 w-full max-w-[460px] h-[100dvh] sm:h-[calc(100dvh-2rem)] sm:max-h-[880px] sm:rounded-[32px] glass-panel flex flex-col overflow-hidden shadow-[0_24px_80px_rgba(0,0,0,0.88)]"
+    >
+      <!-- =========================================================
+           ВЕРХНИЙ ХЕДЕР (ВСЕГДА ДОСТУПЕН ДЛЯ ВХОДА АДМИНА)
+      ========================================================= -->
+      <header
+        id="global-header"
+        class="px-4 pt-3.5 pb-2.5 flex items-center justify-between border-b border-champagne/15 shrink-0"
+      >
+        <div id="brand-trigger" class="cursor-pointer select-none">
+          <div class="flex items-center gap-1.5">
+            <span class="text-champagne text-xs star-twinkle">✦</span>
+            <span
+              class="font-cinzel text-sm sm:text-[15px] font-bold tracking-[0.14em] luxury-title"
+              >HAUNTED WINTER</span
+            >
+            <span
+              id="admin-header-badge"
+              class="hidden ml-1 px-2 py-0.5 rounded-full bg-champagne/20 border border-champagne text-[9px] font-bold tracking-wider text-champagne uppercase"
+            >
+              ADMIN
+            </span>
+          </div>
+          <p class="text-[10px] text-silverFrost tracking-wide">
+            08.12.2026 • Алматы • Бақшасарай
+          </p>
+        </div>
+
+        <div class="flex items-center gap-1.5">
+          <!-- Быстрый фильтр по полу (виден только на вкладке Лента) -->
+          <div
+            id="feed-filter-bar"
+            class="hidden flex items-center gap-0.5 bg-white/[0.04] p-1 rounded-full border border-champagne/20"
+          >
+            <button
+              type="button"
+              data-filter="Все"
+              class="filter-pill px-2 py-0.5 rounded-full text-[10px] font-medium transition text-silverFrost"
+            >
+              Все
+            </button>
+            <button
+              type="button"
+              data-filter="Девушка"
+              class="filter-pill px-2 py-0.5 rounded-full text-[10px] font-medium transition text-silverFrost"
+            >
+              Дев
+            </button>
+            <button
+              type="button"
+              data-filter="Парень"
+              class="filter-pill px-2 py-0.5 rounded-full text-[10px] font-medium transition text-silverFrost"
+            >
+              Пар
+            </button>
+          </div>
+
+          <!-- Кнопка входа в режим администратора -->
+          <button
+            id="btn-open-admin-modal"
+            type="button"
+            title="Панель администратора"
+            class="px-2.5 py-1.5 rounded-full glass-pill text-[11px] font-medium text-champagne flex items-center gap-1 shrink-0"
+          >
+            <span>👑</span>
+            <span>Админ</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- =========================================================
+           ПЛАШКА-ДИАГНОСТИКА ПОДКЛЮЧЕНИЯ К БАЗЕ ДАННЫХ
+      ========================================================= -->
+      <div
+        id="db-diagnostic-banner"
+        class="hidden mx-4 mt-3 p-3 rounded-2xl bg-amber-500/10 border border-champagne/45 text-xs text-ivory flex items-start gap-2.5 shrink-0"
+      >
+        <span class="text-champagne text-sm leading-none mt-0.5">⚠️</span>
+        <div class="flex-1 leading-relaxed">
+          <p id="db-diagnostic-title" class="font-semibold text-champagne">
+            Проблема подключения к базе данных
+          </p>
+          <p id="db-diagnostic-text" class="text-[11px] text-silverFrost mt-0.5">
+            Проверьте интернет-соединение и правила доступа Firestore Rules.
+          </p>
+        </div>
+      </div>
+
+      <!-- =========================================================
+           ЭКРАН БЛОКИРОВКИ (ЕСЛИ АККАУНТ ЗАБАНЕН АДМИНИСТРАТОРОМ)
+      ========================================================= -->
+      <section
+        id="view-banned"
+        class="hidden flex-1 flex flex-col items-center justify-center text-center px-6 py-8"
+      >
+        <div
+          class="w-16 h-16 rounded-full bg-crimsonRose/15 border border-crimsonRose/45 flex items-center justify-center text-crimsonRose text-2xl mb-4 shadow-[0_0_30px_rgba(224,82,99,0.25)]"
+        >
+          ⛔
+        </div>
+        <p
+          class="text-[10px] uppercase tracking-[0.26em] text-crimsonRose mb-1.5"
+        >
+          Доступ ограничен
+        </p>
+        <h2 class="font-cinzel text-xl font-bold text-ivory mb-2 leading-snug">
+          Ваш аккаунт заблокирован администратором мероприятия HAUNTED WINTER
+        </h2>
+        <p class="text-xs text-silverFrost max-w-[300px] leading-relaxed mb-6">
+          Просмотр анкет, отправка симпатий и повторная регистрация с этого
+          устройства недоступны. По вопросам разблокировки обратитесь к
+          организаторам бала.
+        </p>
+        <div
+          class="px-4 py-2.5 rounded-2xl bg-white/[0.03] border border-white/10 text-[11px] text-silverFrost"
+        >
+          Организаторы:
+          <span class="text-champagne">@haunted.winter.kazgasa</span>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           ЭКРАН 1: РЕГИСТРАЦИЯ / РЕДАКТИРОВАНИЕ РЕАЛЬНОЙ АНКЕТЫ
+      ========================================================= -->
+      <section
+        id="view-onboarding"
+        class="flex-1 flex flex-col overflow-y-auto custom-scroll px-5 pt-4 pb-8"
+      >
+        <!-- Приветственный заголовок -->
+        <div class="text-center mb-4">
+          <div
+            class="inline-flex items-center gap-2 text-[10px] tracking-[0.24em] uppercase text-silverFrost mb-1"
+          >
+            <span class="w-4 h-[1px] bg-champagne/30"></span>
+            <span>Зимний бал • 08.12.2026</span>
+            <span class="w-4 h-[1px] bg-champagne/30"></span>
+          </div>
+          <h1
+            id="onboarding-heading"
+            class="font-cinzel text-[22px] sm:text-[24px] font-bold tracking-[0.1em] luxury-title"
+          >
+            АНКЕТА ГОСТЯ БАЛА
+          </h1>
+          <p class="text-xs text-silverFrost mt-1">
+            Только реальные участники в Бақшасарае • Алматы
+          </p>
+        </div>
+
+        <!-- Форма регистрации -->
+        <form id="profile-form" class="space-y-3.5">
+          <!-- Загрузка реального фото -->
+          <div class="flex flex-col items-center">
+            <label
+              for="photo-input"
+              class="block w-28 h-36 rounded-2xl overflow-hidden border border-champagne/35 bg-white/[0.03] cursor-pointer relative shadow-lg transition hover:border-champagne"
+            >
+              <img
+                id="photo-preview"
+                src=""
+                alt="Фото профиля"
+                class="w-full h-full object-cover hidden"
+              />
+              <div
+                id="photo-placeholder"
+                class="w-full h-full flex flex-col items-center justify-center text-center p-2"
+              >
+                <div
+                  class="w-9 h-9 rounded-full bg-champagne/15 border border-champagne/35 flex items-center justify-center text-champagne mb-1.5"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                </div>
+                <span class="text-[11px] font-medium text-ivory"
+                  >Загрузить фото</span
+                >
+                <span class="text-[9px] text-silverFrost mt-0.5"
+                  >Ваш портрет</span
+                >
+              </div>
+              <div
+                id="photo-change-badge"
+                class="hidden absolute bottom-1.5 inset-x-1.5 py-1 rounded-lg bg-obsidian/85 backdrop-blur-md text-[10px] text-center text-ivory border border-champagne/25"
+              >
+                Сменить фото
+              </div>
+            </label>
+            <input
+              id="photo-input"
+              type="file"
+              accept="image/*"
+              class="hidden"
+            />
+            <span class="text-[10px] text-silverFrost/80 mt-1.5">
+              Фото автоматически сжимается для быстрой загрузки
+            </span>
+          </div>
+
+          <!-- Имя и Возраст (16–30) -->
+          <div class="grid grid-cols-3 gap-2.5">
+            <div class="col-span-2">
+              <label
+                class="block text-[11px] uppercase tracking-wider text-silverFrost mb-1"
+                >Имя *</label
+              >
+              <input
+                id="input-name"
+                type="text"
+                maxlength="28"
+                required
+                placeholder="Например, Алина"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-champagne/20 text-sm text-ivory placeholder-silverFrost/45 focus:outline-none focus:border-champagne transition"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-[11px] uppercase tracking-wider text-silverFrost mb-1"
+                >Возраст *</label
+              >
+              <input
+                id="input-age"
+                type="number"
+                min="16"
+                max="30"
+                required
+                placeholder="19"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-champagne/20 text-sm text-ivory placeholder-silverFrost/45 focus:outline-none focus:border-champagne transition"
+              />
+            </div>
+          </div>
+
+          <!-- Пол и Кого ищу -->
+          <div class="grid grid-cols-2 gap-2.5">
+            <div>
+              <label
+                class="block text-[11px] uppercase tracking-wider text-silverFrost mb-1"
+                >Пол</label
+              >
+              <div class="grid grid-cols-2 gap-1.5" id="gender-group">
+                <button
+                  type="button"
+                  data-value="Парень"
+                  class="glass-pill py-2 rounded-xl text-xs font-medium text-silverFrost active"
+                >
+                  Парень
+                </button>
+                <button
+                  type="button"
+                  data-value="Девушка"
+                  class="glass-pill py-2 rounded-xl text-xs font-medium text-silverFrost"
+                >
+                  Девушка
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <label
+                class="block text-[11px] uppercase tracking-wider text-silverFrost mb-1"
+                >Кого ищу</label
+              >
+              <div class="grid grid-cols-3 gap-1" id="looking-group">
+                <button
+                  type="button"
+                  data-value="Девушек"
+                  class="glass-pill py-2 rounded-xl text-[11px] font-medium text-silverFrost active"
+                >
+                  Девушек
+                </button>
+                <button
+                  type="button"
+                  data-value="Парней"
+                  class="glass-pill py-2 rounded-xl text-[11px] font-medium text-silverFrost"
+                >
+                  Парней
+                </button>
+                <button
+                  type="button"
+                  data-value="Всех"
+                  class="glass-pill py-2 rounded-xl text-[11px] font-medium text-silverFrost"
+                >
+                  Всех
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Университет / Статус в Алматы -->
+          <div>
+            <label
+              class="block text-[11px] uppercase tracking-wider text-silverFrost mb-1"
+              >Университет / Статус</label
+            >
+            <div class="relative">
+              <select
+                id="input-uni"
+                class="w-full appearance-none px-3.5 py-2.5 rounded-xl bg-[#0B101D] border border-champagne/20 text-sm text-ivory focus:outline-none focus:border-champagne transition"
+              >
+                <option value="КазГАСА">КазГАСА</option>
+                <option value="МУИТ">МУИТ</option>
+                <option value="КБТУ">КБТУ</option>
+                <option value="КазНУ">КазНУ</option>
+                <option value="Нархоз">Нархоз</option>
+                <option value="SDU">SDU</option>
+                <option value="АУЭС">АУЭС</option>
+                <option value="КазНМУ">КазНМУ</option>
+                <option value="ТУРАН">ТУРАН</option>
+                <option value="Другой ВУЗ / Гость">Другой ВУЗ / Гость</option>
+              </select>
+              <div
+                class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-champagne"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Цель на зимний бал -->
+          <div>
+            <label
+              class="block text-[11px] uppercase tracking-wider text-silverFrost mb-1"
+              >Цель на бал</label
+            >
+            <div class="grid grid-cols-2 gap-1.5" id="goal-group">
+              <button
+                type="button"
+                data-value="Пара на бал"
+                class="glass-pill py-2 px-2.5 rounded-xl text-xs text-silverFrost active"
+              >
+                ✨ Пара на бал
+              </button>
+              <button
+                type="button"
+                data-value="Танцы и фото"
+                class="glass-pill py-2 px-2.5 rounded-xl text-xs text-silverFrost"
+              >
+                📸 Танцы и фото
+              </button>
+              <button
+                type="button"
+                data-value="Пойти компанией"
+                class="glass-pill py-2 px-2.5 rounded-xl text-xs text-silverFrost"
+              >
+                🥂 Пойти компанией
+              </button>
+              <button
+                type="button"
+                data-value="Новые знакомства"
+                class="glass-pill py-2 px-2.5 rounded-xl text-xs text-silverFrost"
+              >
+                ❄️ Новые знакомства
+              </button>
+            </div>
+          </div>
+
+          <!-- О себе (до 180 символов) -->
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <label
+                class="text-[11px] uppercase tracking-wider text-silverFrost"
+                >О себе *</label
+              >
+              <span id="bio-counter" class="text-[10px] text-silverFrost/70"
+                >0 / 180</span
+              >
+            </div>
+            <textarea
+              id="input-bio"
+              rows="2"
+              maxlength="180"
+              required
+              placeholder="Напишите о своём образе, музыке или кого хотите встретить 8 декабря..."
+              class="w-full px-3.5 py-2 rounded-xl bg-white/[0.04] border border-champagne/20 text-sm text-ivory placeholder-silverFrost/45 focus:outline-none focus:border-champagne transition resize-none"
+            ></textarea>
+          </div>
+
+          <!-- Скрытые контакты (обязателен хотя бы один) -->
+          <div
+            class="p-3 rounded-2xl bg-white/[0.025] border border-champagne/20 space-y-2"
+          >
+            <div class="flex items-center justify-between">
+              <span
+                class="text-[11px] uppercase tracking-wider text-champagne font-medium flex items-center gap-1.5"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  />
+                </svg>
+                Контакты (минимум один) *
+              </span>
+              <span class="text-[10px] text-silverFrost"
+                >Откроются при мэтче</span
+              >
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <input
+                id="input-tg"
+                type="text"
+                placeholder="Telegram @username"
+                class="w-full px-3 py-2 rounded-xl bg-obsidian/80 border border-white/10 text-xs text-ivory placeholder-silverFrost/45 focus:outline-none focus:border-champagne transition"
+              />
+              <input
+                id="input-ig"
+                type="text"
+                placeholder="Instagram @username"
+                class="w-full px-3 py-2 rounded-xl bg-obsidian/80 border border-white/10 text-xs text-ivory placeholder-silverFrost/45 focus:outline-none focus:border-champagne transition"
+              />
+            </div>
+          </div>
+
+          <!-- Кнопки отправки формы -->
+          <div class="pt-1 flex gap-2">
+            <button
+              type="button"
+              id="btn-cancel-edit"
+              class="hidden w-1/3 py-3 rounded-xl glass-pill text-xs font-medium text-silverFrost"
+            >
+              Отмена
+            </button>
+            <button
+              type="submit"
+              id="btn-submit-profile"
+              class="flex-1 py-3.5 rounded-xl btn-champagne text-sm tracking-wide"
+            >
+              Создать анкету и войти
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- =========================================================
+           ЭКРАН 2: ОСНОВНОЕ ПРИЛОЖЕНИЕ (ЛЕНТА, СИМПАТИИ, АНКЕТА, АДМИН)
+      ========================================================= -->
+      <div id="view-main" class="hidden flex-1 flex flex-col overflow-hidden">
+        <main class="flex-1 relative overflow-hidden flex flex-col">
+          <!-- ВКЛАДКА 1: ЛЕНТА (REAL PROFILES FEED) -->
+          <div
+            id="tab-discover"
+            class="flex-1 flex flex-col px-4 pt-3 pb-3 overflow-hidden"
+          >
+            <div
+              id="card-stack"
+              class="relative flex-1 w-full rounded-[26px] overflow-hidden border border-champagne/20 bg-[#0A0E19] shadow-[0_18px_45px_rgba(0,0,0,0.7)]"
+            >
+              <!-- Карточка реального гостя или экран пустой ленты -->
+            </div>
+
+            <!-- 3 кнопки управления свайпами -->
+            <div
+              id="action-buttons"
+              class="pt-3.5 pb-1 flex items-center justify-center gap-5 shrink-0"
+            >
+              <button
+                id="btn-dislike"
+                type="button"
+                title="Пропустить"
+                class="w-14 h-14 rounded-full glass-panel border border-white/15 flex items-center justify-center text-silverFrost hover:text-crimsonRose hover:border-crimsonRose/45 hover:scale-105 active:scale-95 transition shadow-lg"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+
+              <button
+                id="btn-message-like"
+                type="button"
+                title="Лайк с приглашением"
+                class="w-12 h-12 rounded-full glass-panel border border-champagne/45 flex items-center justify-center text-champagne hover:bg-champagne/15 hover:scale-105 active:scale-95 transition shadow-[0_0_20px_rgba(212,175,122,0.2)]"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </button>
+
+              <button
+                id="btn-like"
+                type="button"
+                title="Лайк"
+                class="w-14 h-14 rounded-full bg-gradient-to-br from-[#D4AF7A] to-[#B78E54] text-obsidian flex items-center justify-center hover:scale-105 active:scale-95 transition shadow-[0_8px_25px_rgba(212,175,122,0.35)]"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ВКЛАДКА 2: СИМПАТИИ И ВЗАИМНЫЕ ПАРЫ -->
+          <div
+            id="tab-likes"
+            class="hidden flex-1 overflow-y-auto custom-scroll px-4 py-4 space-y-5"
+          >
+            <!-- Блок 1: Входящие симпатии -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div>
+                  <h2 class="font-cinzel text-base tracking-wider text-ivory">
+                    Входящие симпатии
+                  </h2>
+                  <p class="text-xs text-silverFrost">
+                    Гости, которым понравилась ваша анкета
+                  </p>
+                </div>
+                <span
+                  id="likes-subtitle-count"
+                  class="text-xs px-2.5 py-0.5 rounded-full bg-champagne/15 text-champagne border border-champagne/30"
+                  >0</span
+                >
+              </div>
+              <div id="incoming-likes-list" class="space-y-2.5"></div>
+            </div>
+
+            <!-- Блок 2: Взаимные пары -->
+            <div class="pt-2 border-t border-champagne/15">
+              <div class="flex items-center justify-between mb-2">
+                <div>
+                  <h2 class="font-cinzel text-base tracking-wider text-ivory">
+                    Взаимные
+                  </h2>
+                  <p class="text-xs text-silverFrost">
+                    Контакты открыты — напишите в Telegram или Instagram
+                  </p>
+                </div>
+                <span
+                  id="matches-subtitle-count"
+                  class="text-xs px-2.5 py-0.5 rounded-full bg-champagne/15 text-champagne border border-champagne/30"
+                  >0</span
+                >
+              </div>
+              <div id="matches-list" class="space-y-2.5"></div>
+            </div>
+          </div>
+
+          <!-- ВКЛАДКА 3: МОЯ АНКЕТА -->
+          <div
+            id="tab-profile"
+            class="hidden flex-1 overflow-y-auto custom-scroll px-4 py-4 space-y-4"
+          >
+            <div class="flex items-center justify-between">
+              <h2 class="font-cinzel text-base tracking-wider text-ivory">
+                Моя анкета
+              </h2>
+              <span
+                id="sync-status-badge"
+                class="text-[10px] px-2.5 py-0.5 rounded-full bg-champagne/10 text-champagne border border-champagne/25"
+              >
+                Активна
+              </span>
+            </div>
+
+            <div
+              id="my-profile-preview"
+              class="rounded-3xl overflow-hidden border border-champagne/25 bg-[#0A0E19] shadow-xl"
+            ></div>
+
+            <div
+              class="p-3.5 rounded-2xl bg-white/[0.03] border border-champagne/20 space-y-2"
+            >
+              <p class="text-[11px] uppercase tracking-wider text-silverFrost">
+                Ваши контакты (видны только при мэтче)
+              </p>
+              <div
+                id="my-contacts-box"
+                class="flex flex-wrap gap-2 text-xs text-ivory"
+              ></div>
+            </div>
+
+            <div class="space-y-2 pt-1">
+              <button
+                id="btn-edit-profile"
+                type="button"
+                class="w-full py-3 rounded-xl btn-champagne text-xs uppercase tracking-wider"
+              >
+                Редактировать анкету
+              </button>
+              <button
+                id="btn-reset-account"
+                type="button"
+                class="w-full py-2.5 rounded-xl btn-crimson text-xs font-medium"
+              >
+                Удалить мою анкету
+              </button>
+            </div>
+          </div>
+
+          <!-- ВКЛАДКА 4: ПАНЕЛЬ АДМИНИСТРАТОРА (ADMIN DASHBOARD) -->
+          <div
+            id="tab-admin"
+            class="hidden flex-1 overflow-y-auto custom-scroll px-4 py-4 space-y-3.5"
+          >
+            <!-- Шапка админ-панели -->
+            <div class="flex items-center justify-between">
+              <div>
+                <h2 class="font-cinzel text-base tracking-wider text-champagne">
+                  👑 Админ-панель
+                </h2>
+                <p class="text-[11px] text-silverFrost">
+                  Модерация анкет HAUNTED WINTER
+                </p>
+              </div>
+              <button
+                id="btn-admin-logout"
+                type="button"
+                class="px-3 py-1.5 rounded-xl glass-pill text-[11px] text-silverFrost hover:text-ivory"
+              >
+                Выйти
+              </button>
+            </div>
+
+            <!-- Живая статистика (4 карточки) -->
+            <div class="grid grid-cols-4 gap-1.5">
+              <div
+                class="p-2.5 rounded-2xl bg-white/[0.035] border border-champagne/20 text-center"
+              >
+                <span
+                  id="stat-total"
+                  class="block text-base font-bold text-ivory"
+                  >0</span
+                >
+                <span class="text-[9px] uppercase tracking-wider text-silverFrost"
+                  >Всего</span
+                >
+              </div>
+              <div
+                class="p-2.5 rounded-2xl bg-white/[0.035] border border-champagne/20 text-center"
+              >
+                <span
+                  id="stat-active"
+                  class="block text-base font-bold text-champagne"
+                  >0</span
+                >
+                <span class="text-[9px] uppercase tracking-wider text-silverFrost"
+                  >Актив</span
+                >
+              </div>
+              <div
+                class="p-2.5 rounded-2xl bg-white/[0.035] border border-crimsonRose/30 text-center"
+              >
+                <span
+                  id="stat-banned"
+                  class="block text-base font-bold text-crimsonRose"
+                  >0</span
+                >
+                <span class="text-[9px] uppercase tracking-wider text-silverFrost"
+                  >В бане</span
+                >
+              </div>
+              <div
+                class="p-2.5 rounded-2xl bg-white/[0.035] border border-champagne/20 text-center"
+              >
+                <span
+                  id="stat-matches"
+                  class="block text-base font-bold text-emerald-300"
+                  >0</span
+                >
+                <span class="text-[9px] uppercase tracking-wider text-silverFrost"
+                  >Пары</span
+                >
+              </div>
+            </div>
+
+            <!-- Поиск и фильтры модерации -->
+            <div class="space-y-2">
+              <input
+                id="admin-search-input"
+                type="text"
+                placeholder="Поиск по имени, ВУЗу, Telegram или Instagram..."
+                class="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-champagne/20 text-xs text-ivory placeholder-silverFrost/50 focus:outline-none focus:border-champagne"
+              />
+
+              <div class="grid grid-cols-3 gap-1.5" id="admin-filter-group">
+                <button
+                  type="button"
+                  data-admin-filter="all"
+                  class="admin-filter-btn glass-pill py-1.5 rounded-xl text-[11px] font-medium text-silverFrost active"
+                >
+                  Все
+                </button>
+                <button
+                  type="button"
+                  data-admin-filter="active"
+                  class="admin-filter-btn glass-pill py-1.5 rounded-xl text-[11px] font-medium text-silverFrost"
+                >
+                  Активные
+                </button>
+                <button
+                  type="button"
+                  data-admin-filter="banned"
+                  class="admin-filter-btn glass-pill py-1.5 rounded-xl text-[11px] font-medium text-silverFrost"
+                >
+                  Забаненные
+                </button>
+              </div>
+            </div>
+
+            <!-- Список всех реальных анкет для модерации -->
+            <div id="admin-profiles-list" class="space-y-2.5 pb-2"></div>
+          </div>
+        </main>
+
+        <!-- Нижняя панель навигации -->
+        <nav
+          id="bottom-nav"
+          class="px-2 py-2 bg-obsidian/95 backdrop-blur-xl border-t border-champagne/15 grid grid-cols-3 gap-1 shrink-0"
+        >
+          <button
+            type="button"
+            data-tab="discover"
+            class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-2xl text-champagne transition"
+          >
+            <svg
+              class="w-5 h-5 mb-0.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.9"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+              />
+            </svg>
+            <span class="text-[10px] font-medium">Лента</span>
+          </button>
+
+          <button
+            type="button"
+            data-tab="likes"
+            class="nav-btn relative flex flex-col items-center justify-center py-1.5 rounded-2xl text-silverFrost hover:text-ivory transition"
+          >
+            <span
+              id="badge-likes"
+              class="hidden absolute top-1 right-6 min-w-[17px] h-[17px] px-1 rounded-full bg-champagne text-obsidian text-[10px] font-bold flex items-center justify-center"
+              >0</span
+            >
+            <svg
+              class="w-5 h-5 mb-0.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.9"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              />
+            </svg>
+            <span class="text-[10px] font-medium">Симпатии</span>
+          </button>
+
+          <button
+            type="button"
+            data-tab="profile"
+            class="nav-btn flex flex-col items-center justify-center py-1.5 rounded-2xl text-silverFrost hover:text-ivory transition"
+          >
+            <svg
+              class="w-5 h-5 mb-0.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.9"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              />
+            </svg>
+            <span class="text-[10px] font-medium">Анкета</span>
+          </button>
+
+          <!-- Вкладка Админ (появляется после ввода секретного кода) -->
+          <button
+            id="nav-btn-admin"
+            type="button"
+            data-tab="admin"
+            class="nav-btn hidden flex flex-col items-center justify-center py-1.5 rounded-2xl text-silverFrost hover:text-ivory transition"
+          >
+            <svg
+              class="w-5 h-5 mb-0.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.9"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              />
+            </svg>
+            <span class="text-[10px] font-medium">Админ</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- =========================================================
+           МОДАЛКА 1: ВХОД ДЛЯ АДМИНИСТРАТОРА
+      ========================================================= -->
+      <div
+        id="modal-admin-login"
+        class="hidden fixed inset-0 z-50 bg-obsidian/85 backdrop-blur-md flex items-center justify-center p-4"
+      >
+        <div
+          class="w-full max-w-[360px] rounded-3xl glass-panel border border-champagne/40 p-5 modal-animate shadow-2xl"
+        >
+          <div class="text-center mb-4">
+            <span class="text-2xl">👑</span>
+            <h3 class="font-cinzel text-lg font-bold text-ivory mt-1">
+              Вход для администратора
+            </h3>
+            <p class="text-xs text-silverFrost mt-1">
+              Введите секретный пароль организатора HAUNTED WINTER
+            </p>
+          </div>
+
+          <form id="admin-login-form" class="space-y-3">
+            <input
+              id="admin-code-input"
+              type="password"
+              autocomplete="off"
+              placeholder="Секретный пароль доступа"
+              class="w-full px-4 py-3 rounded-xl bg-obsidian/85 border border-champagne/30 text-sm text-ivory text-center tracking-wider placeholder-silverFrost/45 focus:outline-none focus:border-champagne"
+            />
+            <div class="flex gap-2">
+              <button
+                type="button"
+                id="btn-close-admin-login"
+                class="w-1/3 py-2.5 rounded-xl glass-pill text-xs text-silverFrost"
+              >
+                Отмена
+              </button>
+              <button
+                type="submit"
+                class="flex-1 py-2.5 rounded-xl btn-champagne text-xs uppercase tracking-wider"
+              >
+                Войти
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- =========================================================
+           МОДАЛКА 2: ЛАЙК С ЛИЧНЫМ ПРИГЛАШЕНИЕМ (💌)
+      ========================================================= -->
+      <div
+        id="modal-message"
+        class="hidden fixed inset-0 z-40 bg-obsidian/85 backdrop-blur-md flex items-center justify-center p-4"
+      >
+        <div
+          class="w-full max-w-[380px] rounded-3xl glass-panel border border-champagne/35 p-5 modal-animate shadow-2xl"
+        >
+          <div class="flex items-center gap-3 mb-3">
+            <img
+              id="msg-target-photo"
+              src=""
+              alt=""
+              class="w-12 h-12 rounded-2xl object-cover border border-champagne/30"
+            />
+            <div>
+              <span
+                class="text-[10px] uppercase tracking-widest text-champagne"
+                >Приглашение на бал 💌</span
+              >
+              <h3
+                id="msg-target-name"
+                class="text-base font-semibold text-ivory"
+              >
+                Имя
+              </h3>
+            </div>
+          </div>
+
+          <textarea
+            id="icebreaker-input"
+            rows="3"
+            maxlength="140"
+            placeholder="Напишите приглашение на зимний бал..."
+            class="w-full p-3 rounded-2xl bg-obsidian/85 border border-champagne/25 text-sm text-ivory placeholder-silverFrost/45 focus:outline-none focus:border-champagne resize-none"
+          ></textarea>
+
+          <div class="flex flex-wrap gap-1.5 mt-2.5 mb-4">
+            <button
+              type="button"
+              class="quick-icebreaker text-[11px] px-2.5 py-1 rounded-full glass-pill text-silverFrost hover:text-ivory"
+            >
+              Пойдём вместе на Haunted Winter?
+            </button>
+            <button
+              type="button"
+              class="quick-icebreaker text-[11px] px-2.5 py-1 rounded-full glass-pill text-silverFrost hover:text-ivory"
+            >
+              Станцуем вальс 8 декабря?
+            </button>
+            <button
+              type="button"
+              class="quick-icebreaker text-[11px] px-2.5 py-1 rounded-full glass-pill text-silverFrost hover:text-ivory"
+            >
+              Увидимся в Бақшасарае ❄️
+            </button>
+          </div>
+
+          <div class="flex gap-2">
+            <button
+              type="button"
+              id="btn-close-msg-modal"
+              class="w-1/3 py-2.5 rounded-xl glass-pill text-xs text-silverFrost"
+            >
+              Отмена
+            </button>
+            <button
+              type="button"
+              id="btn-send-msg-like"
+              class="flex-1 py-2.5 rounded-xl btn-champagne text-xs uppercase tracking-wider"
+            >
+              Отправить лайк
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========================================================
+           МОДАЛКА 3: ВЗАИМНАЯ СИМПАТИЯ (MATCH OVERLAY)
+      ========================================================= -->
+      <div
+        id="modal-match"
+        class="hidden fixed inset-0 z-50 bg-[#05070E]/92 backdrop-blur-xl flex items-center justify-center p-4"
+      >
+        <div
+          class="w-full max-w-[390px] rounded-[30px] glass-panel border border-champagne/45 p-6 text-center modal-animate shadow-[0_0_60px_rgba(212,175,122,0.22)]"
+        >
+          <p
+            class="text-[10px] tracking-[0.28em] uppercase text-champagne mb-1"
+          >
+            HAUNTED WINTER • 08.12.2026
+          </p>
+          <h2
+            class="font-cinzel text-2xl font-bold tracking-wider luxury-title mb-1"
+          >
+            ВЗАИМНАЯ СИМПАТИЯ
+          </h2>
+          <p class="text-xs text-silverFrost mb-5">
+            Вы понравились друг другу — контакты открыты
+          </p>
+
+          <div class="flex items-center justify-center gap-3 mb-5 relative">
+            <div
+              class="w-24 h-32 rounded-2xl overflow-hidden border-2 border-champagne/65 shadow-lg -rotate-3"
+            >
+              <img
+                id="match-me-photo"
+                src=""
+                alt="Вы"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div
+              class="w-10 h-10 rounded-full bg-champagne text-obsidian flex items-center justify-center shadow-[0_0_24px_rgba(212,175,122,0.75)] z-10 -mx-2"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                />
+              </svg>
+            </div>
+
+            <div
+              class="w-24 h-32 rounded-2xl overflow-hidden border-2 border-champagne/65 shadow-lg rotate-3"
+            >
+              <img
+                id="match-them-photo"
+                src=""
+                alt="Пара"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <h3
+            id="match-them-title"
+            class="text-lg font-semibold text-ivory mb-0.5"
+          >
+            Имя, 20
+          </h3>
+          <p id="match-them-sub" class="text-xs text-silverFrost mb-3">
+            ВУЗ • Цель
+          </p>
+
+          <div
+            id="match-message-box"
+            class="hidden mb-4 p-3 rounded-2xl bg-champagne/10 border border-champagne/30 text-xs text-ivory"
+          ></div>
+
+          <div id="match-contacts-list" class="space-y-2 mb-5"></div>
+
+          <button
+            type="button"
+            id="btn-close-match"
+            class="w-full py-3 rounded-xl glass-pill text-xs uppercase tracking-wider text-ivory"
+          >
+            Продолжить
+          </button>
+        </div>
+      </div>
+
+      <!-- =========================================================
+           МОДАЛКА 4: ПОДТВЕРЖДЕНИЕ УДАЛЕНИЯ (СВОЕЙ ИЛИ ЧУЖОЙ АНКЕТЫ)
+      ========================================================= -->
+      <div
+        id="modal-confirm-delete"
+        class="hidden fixed inset-0 z-50 bg-obsidian/85 backdrop-blur-md flex items-center justify-center p-4"
+      >
+        <div
+          class="w-full max-w-[350px] rounded-3xl glass-panel border border-crimsonRose/40 p-5 text-center modal-animate"
+        >
+          <h3
+            id="confirm-delete-title"
+            class="font-cinzel text-base font-bold text-ivory mb-1.5"
+          >
+            Удалить анкету?
+          </h3>
+          <p
+            id="confirm-delete-desc"
+            class="text-xs text-silverFrost mb-4 leading-relaxed"
+          >
+            Анкета и связанные симпатии будут безвозвратно удалены из базы бала.
+          </p>
+          <div class="flex gap-2">
+            <button
+              type="button"
+              id="btn-cancel-delete"
+              class="flex-1 py-2.5 rounded-xl glass-pill text-xs text-ivory"
+            >
+              Отмена
+            </button>
+            <button
+              type="button"
+              id="btn-confirm-delete"
+              class="flex-1 py-2.5 rounded-xl btn-crimson text-xs font-semibold"
+            >
+              Да, удалить
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Всплывающее Toast-уведомление -->
+      <div
+        id="toast"
+        class="pointer-events-none fixed top-5 left-1/2 -translate-x-1/2 z-[60] max-w-[90vw] px-4 py-2 rounded-full bg-[#111729]/95 border border-champagne/45 text-xs text-ivory shadow-xl opacity-0 transition-opacity duration-300 text-center"
+      ></div>
+    </div>
+
+    <!-- =========================================================
+         ЛОГИКА ПРИЛОЖЕНИЯ: FIREBASE v11.0.2 + FIRESTORE + ADMIN PANEL
+    ========================================================= -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+      import {
+        getAuth,
+        signInAnonymously,
+      } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+      import {
+        getFirestore,
+        collection,
+        doc,
+        setDoc,
+        updateDoc,
+        deleteDoc,
+        onSnapshot,
+      } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+      /* ===========================================================
+         1. КОНФИГУРАЦИЯ FIREBASE И ПАРОЛЬ АДМИНИСТРАТОРА
+      =========================================================== */
+      const ADMIN_SECRET_CODE = "HW#Winter2026!Ball$94";
+
+      const MY_FIREBASE_CONFIG = {
+        apiKey: "AIzaSyDk-TCeUdVf8FXqY5wjGKdFkBChIrrxgtI",
+        authDomain: "haunted-winter.firebaseapp.com",
+        projectId: "haunted-winter",
+        storageBucket: "haunted-winter.firebasestorage.app",
+        messagingSenderId: "1090602950869",
+        appId: "1:1090602950869:web:ef8b2dc8cfb2b28664825c",
+        measurementId: "G-B9VYGL1879",
+      };
+
+      /* ===========================================================
+         2. СОСТОЯНИЕ ПРИЛОЖЕНИЯ (100% РЕАЛЬНЫЕ АНКЕТЫ, БЕЗ localStorage)
+      =========================================================== */
+      const STATE = {
+        db: null,
+        auth: null,
+        user: null,
+        uid: null,
+        isReady: false,
+        dbErrorMessage: "",
+        allProfiles: new Map(), // uid -> profileData
+        allInteractions: [], // все документы из hw_interactions
+        genderFilter: "Все",
+        currentTab: "discover",
+        isEditing: false,
+        isAdmin: false,
+        adminFilter: "all", // 'all' | 'active' | 'banned'
+        adminSearchQuery: "",
+        pendingMessageTarget: null,
+        pendingDeleteTarget: null, // { uid, isSelf, name }
+        brandTapCount: 0,
+        brandTapTimer: null,
+      };
+
+      // Восстановление сессии администратора в рамках текущей вкладки браузера
+      try {
+        if (window.sessionStorage.getItem("hw_admin_session") === "true") {
+          STATE.isAdmin = true;
+        }
+      } catch (e) {}
+
+      /* ===========================================================
+         3. ССЫЛКИ НА КОЛЛЕКЦИИ FIRESTORE ('hw_profiles' и 'hw_interactions')
+      =========================================================== */
+      function getProfilesCollectionRef() {
+        return collection(STATE.db, "hw_profiles");
+      }
+
+      function getProfileDocRef(targetUid) {
+        return doc(STATE.db, "hw_profiles", targetUid);
+      }
+
+      function getInteractionsCollectionRef() {
+        return collection(STATE.db, "hw_interactions");
+      }
+
+      function getInteractionDocRef(docId) {
+        return doc(STATE.db, "hw_interactions", docId);
+      }
+
+      /* ===========================================================
+         4. ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ UI И ДИАГНОСТИКИ ОШИБОК
+      =========================================================== */
+      let toastTimer = null;
+      function showToast(text) {
+        const el = document.getElementById("toast");
+        el.textContent = text;
+        el.classList.remove("opacity-0");
+        el.classList.add("opacity-100");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          el.classList.remove("opacity-100");
+          el.classList.add("opacity-0");
+        }, 3400);
+      }
+
+      function showDbDiagnostic(title, description) {
+        STATE.dbErrorMessage = description;
+        const banner = document.getElementById("db-diagnostic-banner");
+        document.getElementById("db-diagnostic-title").textContent = title;
+        document.getElementById("db-diagnostic-text").textContent = description;
+        banner.classList.remove("hidden");
+      }
+
+      function hideDbDiagnostic() {
+        STATE.dbErrorMessage = "";
+        document.getElementById("db-diagnostic-banner").classList.add("hidden");
+      }
+
+      function formatFirebaseErrorRu(err) {
+        const code = err && err.code ? String(err.code) : "";
+        const msg = err && err.message ? String(err.message) : "";
+        const host = window.location.hostname || "florenssw.github.io";
+
+        if (
+          code.includes("unauthorized-domain") ||
+          msg.includes("unauthorized-domain")
+        ) {
+          return `Добавьте домен ${host} в Firebase → Authentication → Settings → Authorized domains`;
+        }
+        if (
+          code.includes("operation-not-allowed") ||
+          msg.includes("operation-not-allowed")
+        ) {
+          return "Включите анонимный вход (Anonymous) в Firebase → Authentication → Sign-in method";
+        }
+        if (
+          code.includes("permission-denied") ||
+          msg.includes("permission-denied") ||
+          msg.includes("Missing or insufficient permissions")
+        ) {
+          return "Проверьте правила Firestore Rules (разрешите чтение и запись для пользователей)";
+        }
+        return `Ошибка подключения к базе (${code || "сеть"}): проверьте интернет или настройки Firebase`;
+      }
+
+      function copyToClipboard(text, successMsg) {
+        const clean = text.trim();
+        const ta = document.createElement("textarea");
+        ta.value = clean;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand("copy");
+          showToast(successMsg || `Скопировано: ${clean}`);
+        } catch (e) {
+          showToast("Не удалось скопировать");
+        }
+        document.body.removeChild(ta);
+      }
+
+      function createMonogramAvatar(name = "HW") {
+        const letter = (name.trim()[0] || "H").toUpperCase();
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="540" viewBox="0 0 400 540">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0F1423"/>
+              <stop offset="100%" stop-color="#06080F"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="540" fill="url(#g)"/>
+          <circle cx="200" cy="240" r="76" fill="none" stroke="#D4AF7A" stroke-opacity="0.45" stroke-width="1.5"/>
+          <text x="200" y="258" text-anchor="middle" fill="#F5F7FA" font-family="Georgia, serif" font-size="54">${letter}</text>
+          <text x="200" y="360" text-anchor="middle" fill="#D4AF7A" font-family="sans-serif" font-size="13" letter-spacing="5">HAUNTED WINTER</text>
+        </svg>`;
+        return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+      }
+
+      window.handleImgError = function (imgEl, name) {
+        imgEl.onerror = null;
+        imgEl.src = createMonogramAvatar(name);
+      };
+
+      function formatHandle(handle) {
+        if (!handle) return "";
+        const h = handle.trim();
+        return h.startsWith("@") ? h : `@${h}`;
+      }
+
+      function cleanUsername(handle) {
+        return handle.trim().replace(/^@+/, "");
+      }
+
+      function escapeHtml(str) {
+        if (!str) return "";
+        return String(str)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      /* ===========================================================
+         5. СЖАТИЕ ФОТО НА OFFSCREEN CANVAS (MAX 550PX, JPEG 0.75)
+      =========================================================== */
+      function compressImageFile(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = (ev) => {
+            const img = new Image();
+            img.onload = () => {
+              const maxSide = 550;
+              let width = img.width;
+              let height = img.height;
+
+              if (width > maxSide || height > maxSide) {
+                if (width >= height) {
+                  height = Math.round((height * maxSide) / width);
+                  width = maxSide;
+                } else {
+                  width = Math.round((width * maxSide) / height);
+                  height = maxSide;
+                }
+              }
+
+              const canvas = document.createElement("canvas");
+              canvas.width = width;
+              canvas.height = height;
+              const ctx = canvas.getContext("2d");
+              ctx.drawImage(img, 0, 0, width, height);
+
+              resolve(canvas.toDataURL("image/jpeg", 0.75));
+            };
+            img.onerror = reject;
+            img.src = ev.target.result;
+          };
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+      }
+
+      /* ===========================================================
+         6. ИНИЦИАЛИЗАЦИЯ FIREBASE v11.0.2
+      =========================================================== */
+      async function initFirebase() {
+        try {
+          const app = initializeApp(MY_FIREBASE_CONFIG);
+          const auth = getAuth(app);
+          const db = getFirestore(app);
+
+          STATE.auth = auth;
+          STATE.db = db;
+
+          // Сначала выполняем анонимный вход, затем подписываемся на коллекции Firestore
+          await signInAnonymously(auth);
+
+          if (!auth.currentUser) {
+            throw new Error("Не удалось получить сессию пользователя");
+          }
+
+          STATE.user = auth.currentUser;
+          STATE.uid = auth.currentUser.uid;
+          STATE.isReady = true;
+          hideDbDiagnostic();
+          startRealtimeListeners();
+        } catch (err) {
+          console.error("Ошибка инициализации Firebase:", err);
+          STATE.isReady = false;
+          const friendlyError = formatFirebaseErrorRu(err);
+          showDbDiagnostic("Ошибка подключения к базе данных", friendlyError);
+          showToast(friendlyError);
+        }
+      }
+
+      function startRealtimeListeners() {
+        if (!STATE.user || !STATE.db) return;
+
+        // 1. Все реальные профили гостей бала ('hw_profiles')
+        onSnapshot(
+          getProfilesCollectionRef(),
+          (snapshot) => {
+            hideDbDiagnostic();
+            const nextMap = new Map();
+            snapshot.forEach((docSnap) => {
+              const data = docSnap.data();
+              if (data && data.uid) {
+                nextMap.set(data.uid, data);
+              }
+            });
+            STATE.allProfiles = nextMap;
+            syncAppRouting();
+          },
+          (err) => {
+            console.error("Ошибка чтения hw_profiles:", err);
+            const friendly = formatFirebaseErrorRu(err);
+            showDbDiagnostic("Ошибка доступа к анкетам", friendly);
+            showToast(friendly);
+          }
+        );
+
+        // 2. Все взаимодействия ('hw_interactions': лайки, приглашения, пропуски)
+        onSnapshot(
+          getInteractionsCollectionRef(),
+          (snapshot) => {
+            const list = [];
+            snapshot.forEach((docSnap) => {
+              const data = docSnap.data();
+              if (data && data.fromUid && data.toUid && data.type) {
+                list.push({ id: docSnap.id, ...data });
+              }
+            });
+            list.sort((a, b) => (b.ts || 0) - (a.ts || 0));
+            STATE.allInteractions = list;
+
+            updateBadges();
+            if (STATE.currentTab === "discover") renderDiscoverCard();
+            if (STATE.currentTab === "likes") renderLikesAndMatchesTab();
+            if (STATE.currentTab === "admin") renderAdminDashboard();
+          },
+          (err) => {
+            console.error("Ошибка чтения hw_interactions:", err);
+            const friendly = formatFirebaseErrorRu(err);
+            showDbDiagnostic("Ошибка доступа к симпатиям", friendly);
+          }
+        );
+      }
+
+      /* ===========================================================
+         7. УПРАВЛЕНИЕ ЭКРАНАМИ (БАН / РЕГИСТРАЦИЯ / ОСНОВНОЕ ПРИЛОЖЕНИЕ)
+      =========================================================== */
+      function getMyProfile() {
+        return STATE.uid ? STATE.allProfiles.get(STATE.uid) || null : null;
+      }
+
+      function syncAppRouting() {
+        const myProfile = getMyProfile();
+        updateAdminUIState();
+
+        // 1. Если пользователь забанен (и не вошёл в режим админа)
+        if (myProfile && myProfile.banned === true && !STATE.isAdmin) {
+          document.getElementById("view-banned").classList.remove("hidden");
+          document.getElementById("view-onboarding").classList.add("hidden");
+          document.getElementById("view-main").classList.add("hidden");
+          document.getElementById("feed-filter-bar").classList.add("hidden");
+          return;
+        }
+
+        document.getElementById("view-banned").classList.add("hidden");
+
+        // 2. Если пользователь редактирует анкету
+        if (STATE.isEditing) {
+          document.getElementById("view-onboarding").classList.remove("hidden");
+          document.getElementById("view-main").classList.add("hidden");
+          document.getElementById("feed-filter-bar").classList.add("hidden");
+          return;
+        }
+
+        // 3. Если анкета создана или активирован режим администратора -> показываем основной интерфейс
+        if (myProfile || STATE.isAdmin) {
+          document.getElementById("view-onboarding").classList.add("hidden");
+          document.getElementById("view-main").classList.remove("hidden");
+
+          if (!myProfile && STATE.isAdmin && STATE.currentTab !== "admin") {
+            switchTab("admin");
+          } else {
+            refreshCurrentTab();
+          }
+        } else {
+          document.getElementById("view-onboarding").classList.remove("hidden");
+          document.getElementById("view-main").classList.add("hidden");
+          document.getElementById("feed-filter-bar").classList.add("hidden");
+        }
+      }
+
+      function refreshCurrentTab() {
+        updateBadges();
+        updateFilterPillsUI();
+        if (STATE.currentTab === "discover") renderDiscoverCard();
+        if (STATE.currentTab === "likes") renderLikesAndMatchesTab();
+        if (STATE.currentTab === "profile") renderMyProfileTab();
+        if (STATE.currentTab === "admin") renderAdminDashboard();
+      }
+
+      function switchTab(tabName) {
+        STATE.currentTab = tabName;
+
+        ["discover", "likes", "profile", "admin"].forEach((t) => {
+          const el = document.getElementById(`tab-${t}`);
+          if (el) el.classList.toggle("hidden", t !== tabName);
+        });
+
+        document
+          .getElementById("feed-filter-bar")
+          .classList.toggle("hidden", tabName !== "discover");
+
+        document.querySelectorAll(".nav-btn").forEach((btn) => {
+          const active = btn.dataset.tab === tabName;
+          btn.classList.toggle("text-champagne", active);
+          btn.classList.toggle("text-silverFrost", !active);
+        });
+
+        refreshCurrentTab();
+      }
+
+      document.querySelectorAll(".nav-btn").forEach((btn) => {
+        btn.addEventListener("click", () => switchTab(btn.dataset.tab));
+      });
+
+      /* ===========================================================
+         8. ФОРМА РЕГИСТРАЦИИ / РЕДАКТИРОВАНИЯ АНКЕТЫ
+      =========================================================== */
+      let selectedPhotoDataUrl = "";
+      let selectedGender = "Парень";
+      let selectedLookingFor = "Девушек";
+      let selectedGoal = "Пара на бал";
+
+      function setupPillGroup(containerId, onSelect) {
+        const container = document.getElementById(containerId);
+        const buttons = container.querySelectorAll("button");
+        buttons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            buttons.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            onSelect(btn.dataset.value);
+          });
+        });
+      }
+
+      function setPillGroupValue(containerId, value) {
+        const container = document.getElementById(containerId);
+        container.querySelectorAll("button").forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.value === value);
+        });
+      }
+
+      setupPillGroup("gender-group", (val) => {
+        selectedGender = val;
+        if (!STATE.isEditing) {
+          const autoPref = val === "Парень" ? "Девушек" : "Парней";
+          selectedLookingFor = autoPref;
+          setPillGroupValue("looking-group", autoPref);
+        }
+      });
+
+      setupPillGroup("looking-group", (val) => {
+        selectedLookingFor = val;
+      });
+
+      setupPillGroup("goal-group", (val) => {
+        selectedGoal = val;
+      });
+
+      function setPhotoPreview(url) {
+        selectedPhotoDataUrl = url;
+        const preview = document.getElementById("photo-preview");
+        const placeholder = document.getElementById("photo-placeholder");
+        const badge = document.getElementById("photo-change-badge");
+
+        if (url) {
+          preview.src = url;
+          preview.classList.remove("hidden");
+          placeholder.classList.add("hidden");
+          badge.classList.remove("hidden");
+        } else {
+          preview.classList.add("hidden");
+          placeholder.classList.remove("hidden");
+          badge.classList.add("hidden");
+        }
+      }
+
+      document
+        .getElementById("photo-input")
+        .addEventListener("change", async (e) => {
+          const file = e.target.files && e.target.files[0];
+          if (!file) return;
+          try {
+            showToast("Сжимаем фото...");
+            const compressed = await compressImageFile(file);
+            setPhotoPreview(compressed);
+            showToast("Фото загружено!");
+          } catch (err) {
+            showToast("Не удалось обработать фото");
+          }
+        });
+
+      const bioInput = document.getElementById("input-bio");
+      const bioCounter = document.getElementById("bio-counter");
+      bioInput.addEventListener("input", () => {
+        bioCounter.textContent = `${bioInput.value.length} / 180`;
+      });
+
+      document
+        .getElementById("profile-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          if (!STATE.isReady || !STATE.user || !STATE.db || !STATE.uid) {
+            showToast(
+              STATE.dbErrorMessage ||
+                "Подключаемся к базе данных, попробуйте через пару секунд..."
+            );
+            return;
+          }
+
+          const existing = getMyProfile();
+          if (existing && existing.banned === true) {
+            showToast("Ваш аккаунт заблокирован");
+            return;
+          }
+
+          const name = document.getElementById("input-name").value.trim();
+          const age = parseInt(document.getElementById("input-age").value, 10);
+          const university = document.getElementById("input-uni").value;
+          const bio = bioInput.value.trim();
+          const telegram = document.getElementById("input-tg").value.trim();
+          const instagram = document.getElementById("input-ig").value.trim();
+
+          if (!name) {
+            showToast("Введите ваше имя");
+            return;
+          }
+          if (!age || age < 16 || age > 30) {
+            showToast("Возраст должен быть от 16 до 30 лет");
+            return;
+          }
+          if (!telegram && !instagram) {
+            showToast("Укажите Telegram или Instagram для связи");
+            return;
+          }
+
+          const submitBtn = document.getElementById("btn-submit-profile");
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Сохраняем анкету...";
+
+          try {
+            const finalPhoto =
+              selectedPhotoDataUrl || createMonogramAvatar(name);
+
+            const profileData = {
+              uid: STATE.uid,
+              name,
+              age,
+              gender: selectedGender,
+              lookingFor: selectedLookingFor,
+              university,
+              goal: selectedGoal,
+              bio,
+              telegram: formatHandle(telegram),
+              instagram: formatHandle(instagram),
+              photo: finalPhoto,
+              banned: existing ? Boolean(existing.banned) : false,
+              createdAt: existing ? existing.createdAt : Date.now(),
+              updatedAt: Date.now(),
+            };
+
+            await setDoc(getProfileDocRef(STATE.uid), profileData, {
+              merge: true,
+            });
+
+            if (!STATE.isEditing) {
+              if (selectedLookingFor === "Девушек")
+                STATE.genderFilter = "Девушка";
+              else if (selectedLookingFor === "Парней")
+                STATE.genderFilter = "Парень";
+              else STATE.genderFilter = "Все";
+            }
+
+            STATE.isEditing = false;
+            STATE.currentTab = "discover";
+            showToast("Анкета опубликована!");
+          } catch (err) {
+            console.error("Ошибка сохранения анкеты:", err);
+            const friendly = formatFirebaseErrorRu(err);
+            showDbDiagnostic("Не удалось сохранить анкету", friendly);
+            showToast(friendly);
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Создать анкету и войти";
+          }
+        });
+
+      function openEditProfileForm() {
+        const p = getMyProfile();
+        if (!p) {
+          STATE.isEditing = true;
+          document.getElementById("onboarding-heading").textContent =
+            "СОЗДАНИЕ АНКЕТЫ";
+          document.getElementById("btn-cancel-edit").classList.remove("hidden");
+          syncAppRouting();
+          return;
+        }
+
+        STATE.isEditing = true;
+        document.getElementById("onboarding-heading").textContent =
+          "РЕДАКТИРОВАНИЕ АНКЕТЫ";
+        document.getElementById("input-name").value = p.name;
+        document.getElementById("input-age").value = p.age;
+        document.getElementById("input-uni").value = p.university;
+        bioInput.value = p.bio || "";
+        bioCounter.textContent = `${bioInput.value.length} / 180`;
+        document.getElementById("input-tg").value = p.telegram || "";
+        document.getElementById("input-ig").value = p.instagram || "";
+
+        selectedGender = p.gender;
+        selectedLookingFor = p.lookingFor;
+        selectedGoal = p.goal;
+
+        setPillGroupValue("gender-group", p.gender);
+        setPillGroupValue("looking-group", p.lookingFor);
+        setPillGroupValue("goal-group", p.goal);
+        setPhotoPreview(p.photo);
+
+        document.getElementById("btn-cancel-edit").classList.remove("hidden");
+        document.getElementById("btn-submit-profile").textContent =
+          "Сохранить изменения";
+        syncAppRouting();
+      }
+
+      document
+        .getElementById("btn-cancel-edit")
+        .addEventListener("click", () => {
+          STATE.isEditing = false;
+          syncAppRouting();
+        });
+
+      /* ===========================================================
+         9. ЛЕНТА РЕАЛЬНЫХ АНКЕТ (DISCOVERY FEED)
+      =========================================================== */
+      function updateFilterPillsUI() {
+        document.querySelectorAll(".filter-pill").forEach((btn) => {
+          const active = btn.dataset.filter === STATE.genderFilter;
+          btn.classList.toggle("bg-champagne", active);
+          btn.classList.toggle("text-obsidian", active);
+          btn.classList.toggle("font-semibold", active);
+          btn.classList.toggle("text-silverFrost", !active);
+        });
+      }
+
+      document.querySelectorAll(".filter-pill").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          STATE.genderFilter = btn.dataset.filter;
+          updateFilterPillsUI();
+          renderDiscoverCard();
+        });
+      });
+
+      function getMySwipedUidsSet() {
+        const set = new Set();
+        if (!STATE.uid) return set;
+        STATE.allInteractions.forEach((item) => {
+          if (item.fromUid === STATE.uid) {
+            set.add(item.toUid);
+          }
+        });
+        return set;
+      }
+
+      function getFilteredFeedProfiles() {
+        const swipedSet = getMySwipedUidsSet();
+        const list = [];
+        STATE.allProfiles.forEach((p) => {
+          if (p.uid === STATE.uid) return;
+          if (p.banned === true) return;
+          if (swipedSet.has(p.uid)) return;
+          if (STATE.genderFilter !== "Все" && p.gender !== STATE.genderFilter)
+            return;
+          list.push(p);
+        });
+        list.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+        return list;
+      }
+
+      let currentTopProfile = null;
+
+      function renderDiscoverCard() {
+        const stack = document.getElementById("card-stack");
+        const actionsBar = document.getElementById("action-buttons");
+        const candidates = getFilteredFeedProfiles();
+
+        if (candidates.length === 0) {
+          currentTopProfile = null;
+          actionsBar.classList.add("opacity-35", "pointer-events-none");
+          stack.innerHTML = `
+            <div class="w-full h-full flex flex-col items-center justify-center text-center p-6">
+              <div class="w-16 h-16 rounded-full bg-champagne/12 border border-champagne/35 flex items-center justify-center text-champagne text-2xl mb-4 shadow-[0_0_25px_rgba(212,175,122,0.18)]">
+                👑
+              </div>
+              <h3 class="font-cinzel text-lg font-bold text-ivory tracking-wide mb-2">
+                Пока новых анкет нет
+              </h3>
+              <p class="text-xs text-silverFrost max-w-[280px] leading-relaxed mb-6">
+                Все реальные гости бала уже просмотрены, или ты один из первых! Поделись ссылкой с участниками HAUNTED WINTER.
+              </p>
+              <div class="w-full max-w-[260px] space-y-2.5">
+                <button
+                  type="button"
+                  id="btn-share-site"
+                  class="w-full py-3 rounded-xl btn-champagne text-xs uppercase tracking-wider"
+                >
+                  Скопировать ссылку на сайт
+                </button>
+                <button
+                  type="button"
+                  id="btn-refresh-feed"
+                  class="w-full py-2.5 rounded-xl glass-pill text-xs text-ivory"
+                >
+                  Обновить ленту
+                </button>
+              </div>
+            </div>
+          `;
+
+          document
+            .getElementById("btn-share-site")
+            .addEventListener("click", () => {
+              copyToClipboard(window.location.href, "Ссылка скопирована!");
+            });
+
+          document
+            .getElementById("btn-refresh-feed")
+            .addEventListener("click", async () => {
+              await resetSkippedInteractions();
+            });
+          return;
+        }
+
+        actionsBar.classList.remove("opacity-35", "pointer-events-none");
+        const profile = candidates[0];
+        currentTopProfile = profile;
+
+        const adminQuickBar = STATE.isAdmin
+          ? `
+            <div class="absolute top-12 right-3.5 z-20 flex items-center gap-1.5">
+              <button
+                type="button"
+                id="btn-inline-ban"
+                class="px-2.5 py-1 rounded-lg bg-obsidian/85 backdrop-blur-md border border-champagne/40 text-[10px] font-semibold text-champagne hover:bg-champagne hover:text-obsidian transition"
+              >
+                Бан
+              </button>
+              <button
+                type="button"
+                id="btn-inline-delete"
+                class="px-2.5 py-1 rounded-lg bg-obsidian/85 backdrop-blur-md border border-crimsonRose/50 text-[10px] font-semibold text-crimsonRose hover:bg-crimsonRose hover:text-white transition"
+              >
+                Удалить
+              </button>
+            </div>
+          `
+          : "";
+
+        stack.innerHTML = `
+          <div id="active-swipe-card" class="swipe-card relative w-full h-full">
+            <img
+              src="${profile.photo}"
+              alt="${escapeHtml(profile.name)}"
+              onerror="handleImgError(this, '${escapeHtml(profile.name)}')"
+              class="w-full h-full object-cover pointer-events-none"
+            />
+
+            <div
+              class="absolute inset-0 pointer-events-none"
+              style="background: linear-gradient(to top, #06080F 7%, rgba(6, 8, 15, 0.84) 35%, rgba(6, 8, 15, 0.14) 65%, rgba(6, 8, 15, 0.38) 100%);"
+            ></div>
+
+            <!-- Верхние бейджи ВУЗа и Цели на бал -->
+            <div class="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between gap-2 pointer-events-none">
+              <span class="px-3 py-1 rounded-full bg-obsidian/70 backdrop-blur-md border border-champagne/25 text-[11px] font-medium text-ivory truncate">
+                🏛 ${escapeHtml(profile.university)}
+              </span>
+              <span class="px-3 py-1 rounded-full bg-champagne/20 backdrop-blur-md border border-champagne/45 text-[11px] font-medium text-champagne shrink-0">
+                ${escapeHtml(profile.goal)}
+              </span>
+            </div>
+
+            ${adminQuickBar}
+
+            <!-- Штампы свайпа -->
+            <div
+              id="stamp-like"
+              class="opacity-0 absolute top-16 left-5 px-4 py-1.5 rounded-xl border-2 border-champagne text-champagne font-cinzel font-bold text-lg tracking-widest -rotate-12 pointer-events-none bg-obsidian/55 backdrop-blur-sm"
+            >
+              ЛАЙК
+            </div>
+
+            <div
+              id="stamp-skip"
+              class="opacity-0 absolute top-16 right-5 px-4 py-1.5 rounded-xl border-2 border-silverFrost text-silverFrost font-cinzel font-bold text-lg tracking-widest rotate-12 pointer-events-none bg-obsidian/55 backdrop-blur-sm"
+            >
+              ПРОПУСК
+            </div>
+
+            <!-- Информация об анкете -->
+            <div class="absolute bottom-0 inset-x-0 p-5 pointer-events-none">
+              <div class="flex items-baseline gap-2 mb-1">
+                <h2 class="text-2xl font-bold text-ivory tracking-tight">
+                  ${escapeHtml(profile.name)}, <span class="font-normal text-ivory/90">${profile.age}</span>
+                </h2>
+                <span class="text-champagne text-xs">✦</span>
+              </div>
+              <p class="text-[13px] text-silverFrost leading-relaxed line-clamp-3">
+                ${escapeHtml(profile.bio)}
+              </p>
+            </div>
+          </div>
+        `;
+
+        if (STATE.isAdmin) {
+          document
+            .getElementById("btn-inline-ban")
+            .addEventListener("click", (e) => {
+              e.stopPropagation();
+              toggleBanUser(profile.uid, true);
+            });
+          document
+            .getElementById("btn-inline-delete")
+            .addEventListener("click", (e) => {
+              e.stopPropagation();
+              promptDeleteProfile(profile.uid, false, profile.name);
+            });
+        }
+
+        attachSwipePhysics(document.getElementById("active-swipe-card"));
+      }
+
+      async function resetSkippedInteractions() {
+        if (!STATE.user || !STATE.db || !STATE.uid) return;
+        try {
+          const mySkips = STATE.allInteractions.filter(
+            (item) => item.fromUid === STATE.uid && item.type === "skip"
+          );
+          for (const skipDoc of mySkips) {
+            await deleteDoc(getInteractionDocRef(skipDoc.id));
+          }
+          showToast("Лента обновлена");
+        } catch (err) {
+          console.error("Ошибка сброса пропусков:", err);
+          showToast(formatFirebaseErrorRu(err));
+        }
+      }
+
+      /* ===========================================================
+         10. ФИЗИКА СВАЙПОВ (МЫШЬ + ТАЧ)
+      =========================================================== */
+      function attachSwipePhysics(cardEl) {
+        if (!cardEl) return;
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+
+        const likeStamp = document.getElementById("stamp-like");
+        const skipStamp = document.getElementById("stamp-skip");
+
+        const onStart = (clientX) => {
+          isDragging = true;
+          startX = clientX;
+          currentX = 0;
+          cardEl.classList.remove("animating");
+        };
+
+        const onMove = (clientX) => {
+          if (!isDragging) return;
+          currentX = clientX - startX;
+          const rotate = currentX * 0.045;
+          cardEl.style.transform = `translateX(${currentX}px) rotate(${rotate}deg)`;
+
+          const ratio = Math.min(Math.abs(currentX) / 95, 1);
+          if (currentX > 15) {
+            likeStamp.style.opacity = ratio;
+            skipStamp.style.opacity = 0;
+          } else if (currentX < -15) {
+            skipStamp.style.opacity = ratio;
+            likeStamp.style.opacity = 0;
+          } else {
+            likeStamp.style.opacity = 0;
+            skipStamp.style.opacity = 0;
+          }
+        };
+
+        const onEnd = () => {
+          if (!isDragging) return;
+          isDragging = false;
+          cardEl.classList.add("animating");
+
+          if (currentX > 95) {
+            completeSwipe("right", "");
+          } else if (currentX < -95) {
+            completeSwipe("left", "");
+          } else {
+            cardEl.style.transform = "translateX(0px) rotate(0deg)";
+            likeStamp.style.opacity = 0;
+            skipStamp.style.opacity = 0;
+          }
+        };
+
+        cardEl.addEventListener("mousedown", (e) => {
+          if (e.target.closest("button")) return;
+          onStart(e.clientX);
+        });
+        window.addEventListener("mousemove", (e) => {
+          if (isDragging) onMove(e.clientX);
+        });
+        window.addEventListener("mouseup", () => {
+          if (isDragging) onEnd();
+        });
+
+        cardEl.addEventListener(
+          "touchstart",
+          (e) => {
+            if (e.target.closest("button")) return;
+            onStart(e.touches[0].clientX);
+          },
+          { passive: true }
+        );
+        cardEl.addEventListener(
+          "touchmove",
+          (e) => onMove(e.touches[0].clientX),
+          { passive: true }
+        );
+        cardEl.addEventListener("touchend", onEnd);
+      }
+
+      /* ===========================================================
+         11. ОБРАБОТКА ЛАЙКОВ, ПРОПУСКОВ И ВЗАИМНЫХ СИМПАТИЙ В FIRESTORE
+      =========================================================== */
+      async function completeSwipe(direction, attachedMessage = "") {
+        const target = currentTopProfile;
+        if (!target || !STATE.user || !STATE.db || !STATE.uid) return;
+
+        if (direction === "right" && !getMyProfile()) {
+          showToast("Сначала создайте свою анкету во вкладке «Анкета»");
+          return;
+        }
+
+        const cardEl = document.getElementById("active-swipe-card");
+        if (cardEl) {
+          cardEl.classList.add("animating");
+          const outX = direction === "right" ? 420 : -420;
+          const outRot = direction === "right" ? 18 : -18;
+          cardEl.style.transform = `translateX(${outX}px) rotate(${outRot}deg)`;
+          cardEl.style.opacity = "0";
+        }
+
+        if (direction === "right") {
+          await recordLikeInteraction(target.uid, attachedMessage);
+        } else {
+          await recordSkipInteraction(target.uid);
+        }
+
+        setTimeout(() => {
+          renderDiscoverCard();
+        }, 280);
+      }
+
+      async function recordSkipInteraction(targetUid) {
+        if (!STATE.user || !STATE.db || !STATE.uid) return;
+        const docId = `${STATE.uid}_${targetUid}`;
+        try {
+          await setDoc(getInteractionDocRef(docId), {
+            type: "skip",
+            fromUid: STATE.uid,
+            toUid: targetUid,
+            message: "",
+            ts: Date.now(),
+          });
+        } catch (err) {
+          console.error("Ошибка записи пропуска:", err);
+        }
+      }
+
+      async function recordLikeInteraction(targetUid, attachedMessage = "") {
+        if (!STATE.user || !STATE.db || !STATE.uid) return;
+        const docId = `${STATE.uid}_${targetUid}`;
+        try {
+          await setDoc(getInteractionDocRef(docId), {
+            type: "like",
+            fromUid: STATE.uid,
+            toUid: targetUid,
+            message: attachedMessage || "",
+            ts: Date.now(),
+          });
+
+          const incomingFromTarget = STATE.allInteractions.find(
+            (item) =>
+              item.fromUid === targetUid &&
+              item.toUid === STATE.uid &&
+              item.type === "like"
+          );
+          const targetProfile = STATE.allProfiles.get(targetUid);
+
+          if (incomingFromTarget && targetProfile) {
+            const note = attachedMessage || incomingFromTarget.message || "";
+            openMatchModal(targetProfile, note);
+          } else if (targetProfile) {
+            showToast(
+              attachedMessage
+                ? `Лайк с приглашением отправлен ${targetProfile.name} 💌`
+                : `Симпатия отправлена ${targetProfile.name} ♥`
+            );
+          }
+        } catch (err) {
+          console.error("Ошибка отправки симпатии:", err);
+          showToast(formatFirebaseErrorRu(err));
+        }
+      }
+
+      document
+        .getElementById("btn-dislike")
+        .addEventListener("click", () => completeSwipe("left", ""));
+      document
+        .getElementById("btn-like")
+        .addEventListener("click", () => completeSwipe("right", ""));
+
+      document
+        .getElementById("btn-message-like")
+        .addEventListener("click", () => {
+          if (!currentTopProfile) return;
+          if (!getMyProfile()) {
+            showToast("Сначала создайте свою анкету");
+            return;
+          }
+          STATE.pendingMessageTarget = currentTopProfile;
+          document.getElementById("msg-target-photo").src =
+            currentTopProfile.photo;
+          document.getElementById(
+            "msg-target-name"
+          ).textContent = `${currentTopProfile.name}, ${currentTopProfile.age}`;
+          document.getElementById("icebreaker-input").value = "";
+          document.getElementById("modal-message").classList.remove("hidden");
+        });
+
+      document.querySelectorAll(".quick-icebreaker").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document.getElementById("icebreaker-input").value =
+            btn.textContent.trim();
+        });
+      });
+
+      document
+        .getElementById("btn-close-msg-modal")
+        .addEventListener("click", () => {
+          document.getElementById("modal-message").classList.add("hidden");
+        });
+
+      document
+        .getElementById("btn-send-msg-like")
+        .addEventListener("click", () => {
+          const msg = document.getElementById("icebreaker-input").value.trim();
+          document.getElementById("modal-message").classList.add("hidden");
+          completeSwipe("right", msg);
+        });
+
+      /* ===========================================================
+         12. МОДАЛКА ВЗАИМНОЙ СИМПАТИИ (MATCH OVERLAY)
+      =========================================================== */
+      function openMatchModal(partner, noteText) {
+        const me = getMyProfile();
+        if (!me || !partner) return;
+
+        document.getElementById("match-me-photo").src = me.photo;
+        document.getElementById("match-them-photo").src = partner.photo;
+        document.getElementById(
+          "match-them-title"
+        ).textContent = `${partner.name}, ${partner.age}`;
+        document.getElementById(
+          "match-them-sub"
+        ).textContent = `${partner.university} • ${partner.goal}`;
+
+        const msgBox = document.getElementById("match-message-box");
+        if (noteText) {
+          msgBox.textContent = `💌 «${noteText}»`;
+          msgBox.classList.remove("hidden");
+        } else {
+          msgBox.classList.add("hidden");
+        }
+
+        const contactsBox = document.getElementById("match-contacts-list");
+        contactsBox.innerHTML = buildContactsHtml(partner);
+        bindCopyButtons(contactsBox);
+
+        document.getElementById("modal-match").classList.remove("hidden");
+      }
+
+      document
+        .getElementById("btn-close-match")
+        .addEventListener("click", () => {
+          document.getElementById("modal-match").classList.add("hidden");
+        });
+
+      function buildContactsHtml(person) {
+        let html = "";
+        if (person.telegram) {
+          const tgClean = cleanUsername(person.telegram);
+          html += `
+            <div class="flex items-center justify-between p-2.5 rounded-2xl bg-white/[0.04] border border-champagne/25">
+              <div class="text-left">
+                <span class="block text-[10px] uppercase text-silverFrost">Telegram</span>
+                <span class="text-xs font-medium text-ivory">${escapeHtml(
+                  formatHandle(person.telegram)
+                )}</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button type="button" data-copy="${escapeHtml(
+                  formatHandle(person.telegram)
+                )}" class="copy-contact-btn px-2.5 py-1.5 rounded-xl glass-pill text-[11px] text-ivory">
+                  Копировать
+                </button>
+                <a href="https://t.me/${encodeURIComponent(
+                  tgClean
+                )}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-xl btn-champagne text-[11px]">
+                  Открыть
+                </a>
+              </div>
+            </div>
+          `;
+        }
+        if (person.instagram) {
+          const igClean = cleanUsername(person.instagram);
+          html += `
+            <div class="flex items-center justify-between p-2.5 rounded-2xl bg-white/[0.04] border border-champagne/25">
+              <div class="text-left">
+                <span class="block text-[10px] uppercase text-silverFrost">Instagram</span>
+                <span class="text-xs font-medium text-ivory">${escapeHtml(
+                  formatHandle(person.instagram)
+                )}</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button type="button" data-copy="${escapeHtml(
+                  formatHandle(person.instagram)
+                )}" class="copy-contact-btn px-2.5 py-1.5 rounded-xl glass-pill text-[11px] text-ivory">
+                  Копировать
+                </button>
+                <a href="https://instagram.com/${encodeURIComponent(
+                  igClean
+                )}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-xl glass-pill text-[11px] text-champagne border-champagne/40">
+                  Профиль
+                </a>
+              </div>
+            </div>
+          `;
+        }
+        return html;
+      }
+
+      function bindCopyButtons(rootEl) {
+        rootEl.querySelectorAll(".copy-contact-btn").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            copyToClipboard(btn.dataset.copy);
+          });
+        });
+      }
+
+      /* ===========================================================
+         13. ВКЛАДКА «СИМПАТИИ»: ВХОДЯЩИЕ И ВЗАИМНЫЕ ПАРЫ
+      =========================================================== */
+      function computeUserLikesAndMatches() {
+        if (!STATE.uid) return { incoming: [], matches: [] };
+
+        const myOutgoingLikes = new Map();
+        const myOutgoingSkips = new Set();
+
+        STATE.allInteractions.forEach((item) => {
+          if (item.fromUid === STATE.uid) {
+            if (item.type === "like") {
+              myOutgoingLikes.set(item.toUid, item);
+            } else if (item.type === "skip") {
+              myOutgoingSkips.add(item.toUid);
+            }
+          }
+        });
+
+        const incoming = [];
+        const matches = [];
+        const seenMatchUids = new Set();
+
+        STATE.allInteractions.forEach((item) => {
+          if (item.toUid !== STATE.uid || item.type !== "like") return;
+          const sender = STATE.allProfiles.get(item.fromUid);
+          if (!sender || sender.banned === true) return;
+
+          if (myOutgoingLikes.has(item.fromUid)) {
+            if (!seenMatchUids.has(item.fromUid)) {
+              seenMatchUids.add(item.fromUid);
+              const outLike = myOutgoingLikes.get(item.fromUid);
+              matches.push({
+                partner: sender,
+                message: item.message || outLike.message || "",
+                ts: Math.max(item.ts || 0, outLike.ts || 0),
+              });
+            }
+          } else if (!myOutgoingSkips.has(item.fromUid)) {
+            incoming.push({
+              interactionDocId: item.id,
+              sender,
+              message: item.message || "",
+              ts: item.ts || 0,
+            });
+          }
+        });
+
+        return { incoming, matches };
+      }
+
+      function updateBadges() {
+        const { incoming, matches } = computeUserLikesAndMatches();
+        const totalBadge = incoming.length;
+
+        const badgeLikes = document.getElementById("badge-likes");
+        badgeLikes.textContent = totalBadge;
+        badgeLikes.classList.toggle("hidden", totalBadge === 0);
+
+        const subLikes = document.getElementById("likes-subtitle-count");
+        const subMatches = document.getElementById("matches-subtitle-count");
+        if (subLikes) subLikes.textContent = incoming.length;
+        if (subMatches) subMatches.textContent = matches.length;
+      }
+
+      function renderLikesAndMatchesTab() {
+        updateBadges();
+        const { incoming, matches } = computeUserLikesAndMatches();
+
+        // 1. Входящие симпатии
+        const incomingContainer = document.getElementById(
+          "incoming-likes-list"
+        );
+        if (incoming.length === 0) {
+          incomingContainer.innerHTML = `
+            <div class="p-5 rounded-2xl bg-white/[0.025] border border-champagne/15 text-center">
+              <p class="text-xs text-silverFrost">Пока нет новых входящих симпатий.</p>
+            </div>
+          `;
+        } else {
+          incomingContainer.innerHTML = "";
+          incoming.forEach((item) => {
+            const p = item.sender;
+            const card = document.createElement("div");
+            card.className =
+              "p-3 rounded-2xl bg-white/[0.035] border border-champagne/25 space-y-2.5";
+            card.innerHTML = `
+              <div class="flex items-center gap-3">
+                <img
+                  src="${p.photo}"
+                  alt="${escapeHtml(p.name)}"
+                  onerror="handleImgError(this, '${escapeHtml(p.name)}')"
+                  class="w-16 h-20 rounded-xl object-cover shrink-0 border border-champagne/25"
+                />
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-1.5">
+                    <h4 class="text-sm font-semibold text-ivory truncate">${escapeHtml(
+                      p.name
+                    )}, ${p.age}</h4>
+                    <span class="text-[10px] px-2 py-0.5 rounded-full bg-white/[0.06] text-silverFrost shrink-0">${escapeHtml(
+                      p.university
+                    )}</span>
+                  </div>
+                  <p class="text-[11px] text-champagne mt-0.5">${escapeHtml(
+                    p.goal
+                  )}</p>
+                  <p class="text-xs text-silverFrost mt-1 line-clamp-2">${escapeHtml(
+                    p.bio
+                  )}</p>
+                </div>
+              </div>
+              ${
+                item.message
+                  ? `<div class="px-3 py-2 rounded-xl bg-champagne/10 border border-champagne/25 text-xs text-ivory">💌 «${escapeHtml(
+                      item.message
+                    )}»</div>`
+                  : ""
+              }
+              <div class="flex gap-2">
+                <button
+                  type="button"
+                  data-reject-uid="${p.uid}"
+                  class="btn-reject-incoming w-1/3 py-2 rounded-xl glass-pill text-xs text-silverFrost hover:text-crimsonRose"
+                >
+                  Пропустить
+                </button>
+                <button
+                  type="button"
+                  data-accept-uid="${p.uid}"
+                  class="btn-accept-incoming flex-1 py-2 rounded-xl btn-champagne text-xs"
+                >
+                  Ответить взаимностью ♥
+                </button>
+              </div>
+            `;
+            incomingContainer.appendChild(card);
+          });
+
+          incomingContainer
+            .querySelectorAll(".btn-accept-incoming")
+            .forEach((btn) => {
+              btn.addEventListener("click", async () => {
+                const targetUid = btn.dataset.acceptUid;
+                await recordLikeInteraction(targetUid, "");
+              });
+            });
+
+          incomingContainer
+            .querySelectorAll(".btn-reject-incoming")
+            .forEach((btn) => {
+              btn.addEventListener("click", async () => {
+                const rejectUid = btn.dataset.rejectUid;
+                await recordSkipInteraction(rejectUid);
+                showToast("Симпатия пропущена");
+              });
+            });
+        }
+
+        // 2. Взаимные пары
+        const matchesContainer = document.getElementById("matches-list");
+        if (matches.length === 0) {
+          matchesContainer.innerHTML = `
+            <div class="p-5 rounded-2xl bg-white/[0.025] border border-champagne/15 text-center">
+              <p class="text-xs text-silverFrost">Когда симпатия станет взаимной, здесь откроются контакты.</p>
+            </div>
+          `;
+        } else {
+          matchesContainer.innerHTML = "";
+          matches.forEach((m) => {
+            const p = m.partner;
+            const card = document.createElement("div");
+            card.className =
+              "p-3.5 rounded-2xl bg-white/[0.035] border border-champagne/30 space-y-2.5";
+            card.innerHTML = `
+              <div class="flex items-center gap-3">
+                <img
+                  src="${p.photo}"
+                  alt="${escapeHtml(p.name)}"
+                  onerror="handleImgError(this, '${escapeHtml(p.name)}')"
+                  class="w-14 h-16 rounded-xl object-cover shrink-0 border border-champagne/40"
+                />
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-1.5">
+                    <h4 class="text-sm font-semibold text-ivory truncate">${escapeHtml(
+                      p.name
+                    )}, ${p.age}</h4>
+                    <span class="text-[10px] px-2 py-0.5 rounded-full bg-champagne/15 text-champagne shrink-0">${escapeHtml(
+                      p.university
+                    )}</span>
+                  </div>
+                  <p class="text-[11px] text-silverFrost mt-0.5">${escapeHtml(
+                    p.goal
+                  )}</p>
+                </div>
+              </div>
+              ${
+                m.message
+                  ? `<div class="px-3 py-1.5 rounded-xl bg-champagne/10 border border-champagne/25 text-xs text-ivory">💌 «${escapeHtml(
+                      m.message
+                    )}»</div>`
+                  : ""
+              }
+              <div class="space-y-1.5">
+                ${buildContactsHtml(p)}
+              </div>
+            `;
+            bindCopyButtons(card);
+            matchesContainer.appendChild(card);
+          });
+        }
+      }
+
+      /* ===========================================================
+         14. ВКЛАДКА «МОЯ АНКЕТА»
+      =========================================================== */
+      function renderMyProfileTab() {
+        const p = getMyProfile();
+        const preview = document.getElementById("my-profile-preview");
+        const contactsBox = document.getElementById("my-contacts-box");
+        const deleteBtn = document.getElementById("btn-reset-account");
+        const editBtn = document.getElementById("btn-edit-profile");
+
+        if (!p) {
+          preview.innerHTML = `
+            <div class="p-6 text-center">
+              <p class="text-sm text-ivory font-medium mb-1">У вас пока нет гостевой анкеты</p>
+              <p class="text-xs text-silverFrost">Вы вошли в режиме администратора, но при желании можете также создать свою анкету.</p>
+            </div>
+          `;
+          contactsBox.innerHTML = `<span class="text-silverFrost">Контакты не указаны</span>`;
+          editBtn.textContent = "Создать свою анкету";
+          deleteBtn.classList.add("hidden");
+          return;
+        }
+
+        editBtn.textContent = "Редактировать анкету";
+        deleteBtn.classList.remove("hidden");
+
+        preview.innerHTML = `
+          <div class="relative h-64 w-full">
+            <img
+              src="${p.photo}"
+              alt="${escapeHtml(p.name)}"
+              onerror="handleImgError(this, '${escapeHtml(p.name)}')"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0"
+              style="background: linear-gradient(to top, #0A0E19 10%, rgba(10, 14, 25, 0.35) 55%, transparent 100%);"
+            ></div>
+            <div class="absolute top-3 left-3 right-3 flex justify-between">
+              <span class="px-2.5 py-1 rounded-full bg-obsidian/75 backdrop-blur-md border border-champagne/25 text-[11px] text-ivory">
+                🏛 ${escapeHtml(p.university)}
+              </span>
+              <span class="px-2.5 py-1 rounded-full bg-champagne/20 backdrop-blur-md border border-champagne/40 text-[11px] text-champagne">
+                ${escapeHtml(p.goal)}
+              </span>
+            </div>
+            <div class="absolute bottom-3 left-4 right-4">
+              <h3 class="text-xl font-bold text-ivory">${escapeHtml(
+                p.name
+              )}, ${p.age}</h3>
+              <p class="text-xs text-silverFrost mt-1 line-clamp-2">${escapeHtml(
+                p.bio
+              )}</p>
+            </div>
+          </div>
+        `;
+
+        contactsBox.innerHTML = "";
+        if (p.telegram) {
+          contactsBox.innerHTML += `<span class="px-3 py-1 rounded-xl bg-white/[0.05] border border-champagne/20">Telegram: <strong class="text-champagne">${escapeHtml(
+            p.telegram
+          )}</strong></span>`;
+        }
+        if (p.instagram) {
+          contactsBox.innerHTML += `<span class="px-3 py-1 rounded-xl bg-white/[0.05] border border-champagne/20">Instagram: <strong class="text-champagne">${escapeHtml(
+            p.instagram
+          )}</strong></span>`;
+        }
+      }
+
+      document
+        .getElementById("btn-edit-profile")
+        .addEventListener("click", openEditProfileForm);
+
+      document
+        .getElementById("btn-reset-account")
+        .addEventListener("click", () => {
+          const p = getMyProfile();
+          if (!p) return;
+          promptDeleteProfile(p.uid, true, p.name);
+        });
+
+      /* ===========================================================
+         15. ПАНЕЛЬ АДМИНИСТРАТОРА: ВХОД, БАН, РАЗБАН И УДАЛЕНИЕ АНКЕТ
+      =========================================================== */
+      function openAdminLoginModal() {
+        if (STATE.isAdmin) {
+          switchTab("admin");
+          return;
+        }
+        document.getElementById("admin-code-input").value = "";
+        document.getElementById("modal-admin-login").classList.remove("hidden");
+        setTimeout(() => {
+          document.getElementById("admin-code-input").focus();
+        }, 100);
+      }
+
+      document
+        .getElementById("btn-open-admin-modal")
+        .addEventListener("click", openAdminLoginModal);
+
+      // 5 быстрых нажатий по заголовку HAUNTED WINTER тоже открывают вход админа
+      document
+        .getElementById("brand-trigger")
+        .addEventListener("click", () => {
+          STATE.brandTapCount += 1;
+          clearTimeout(STATE.brandTapTimer);
+          STATE.brandTapTimer = setTimeout(() => {
+            STATE.brandTapCount = 0;
+          }, 1500);
+          if (STATE.brandTapCount >= 5) {
+            STATE.brandTapCount = 0;
+            openAdminLoginModal();
+          }
+        });
+
+      document
+        .getElementById("btn-close-admin-login")
+        .addEventListener("click", () => {
+          document.getElementById("modal-admin-login").classList.add("hidden");
+        });
+
+      document
+        .getElementById("admin-login-form")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          const code = document.getElementById("admin-code-input").value.trim();
+          if (code === ADMIN_SECRET_CODE) {
+            STATE.isAdmin = true;
+            try {
+              window.sessionStorage.setItem("hw_admin_session", "true");
+            } catch (err) {}
+
+            document
+              .getElementById("modal-admin-login")
+              .classList.add("hidden");
+            updateAdminUIState();
+            syncAppRouting();
+            switchTab("admin");
+            showToast("Режим администратора активирован 👑");
+          } else {
+            showToast("Неверный пароль администратора");
+          }
+        });
+
+      document
+        .getElementById("btn-admin-logout")
+        .addEventListener("click", () => {
+          STATE.isAdmin = false;
+          try {
+            window.sessionStorage.removeItem("hw_admin_session");
+          } catch (err) {}
+
+          updateAdminUIState();
+          if (STATE.currentTab === "admin") {
+            STATE.currentTab = "discover";
+          }
+          syncAppRouting();
+          showToast("Вы вышли из режима администратора");
+        });
+
+      function updateAdminUIState() {
+        const badge = document.getElementById("admin-header-badge");
+        const navAdminBtn = document.getElementById("nav-btn-admin");
+        const bottomNav = document.getElementById("bottom-nav");
+
+        badge.classList.toggle("hidden", !STATE.isAdmin);
+        navAdminBtn.classList.toggle("hidden", !STATE.isAdmin);
+
+        if (STATE.isAdmin) {
+          bottomNav.classList.remove("grid-cols-3");
+          bottomNav.classList.add("grid-cols-4");
+        } else {
+          bottomNav.classList.remove("grid-cols-4");
+          bottomNav.classList.add("grid-cols-3");
+        }
+      }
+
+      document.querySelectorAll(".admin-filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".admin-filter-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          STATE.adminFilter = btn.dataset.adminFilter;
+          renderAdminDashboard();
+        });
+      });
+
+      document
+        .getElementById("admin-search-input")
+        .addEventListener("input", (e) => {
+          STATE.adminSearchQuery = e.target.value.trim().toLowerCase();
+          renderAdminDashboard();
+        });
+
+      function computeTotalGlobalMatches() {
+        const pairSet = new Set();
+        const likeSet = new Set();
+        STATE.allInteractions.forEach((item) => {
+          if (item.type === "like") {
+            likeSet.add(`${item.fromUid}->${item.toUid}`);
+          }
+        });
+        STATE.allInteractions.forEach((item) => {
+          if (
+            item.type === "like" &&
+            likeSet.has(`${item.toUid}->${item.fromUid}`)
+          ) {
+            const pairKey = [item.fromUid, item.toUid].sort().join("_");
+            pairSet.add(pairKey);
+          }
+        });
+        return pairSet.size;
+      }
+
+      function renderAdminDashboard() {
+        if (!STATE.isAdmin) return;
+
+        const profiles = Array.from(STATE.allProfiles.values());
+        profiles.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+
+        const totalCount = profiles.length;
+        const bannedCount = profiles.filter((p) => p.banned === true).length;
+        const activeCount = totalCount - bannedCount;
+        const globalMatchesCount = computeTotalGlobalMatches();
+
+        document.getElementById("stat-total").textContent = totalCount;
+        document.getElementById("stat-active").textContent = activeCount;
+        document.getElementById("stat-banned").textContent = bannedCount;
+        document.getElementById("stat-matches").textContent =
+          globalMatchesCount;
+
+        const filtered = profiles.filter((p) => {
+          if (STATE.adminFilter === "active" && p.banned === true) return false;
+          if (STATE.adminFilter === "banned" && p.banned !== true) return false;
+
+          if (STATE.adminSearchQuery) {
+            const haystack = `${p.name} ${p.university} ${p.telegram || ""} ${
+              p.instagram || ""
+            } ${p.bio || ""}`.toLowerCase();
+            if (!haystack.includes(STATE.adminSearchQuery)) return false;
+          }
+          return true;
+        });
+
+        const container = document.getElementById("admin-profiles-list");
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div class="p-6 rounded-2xl bg-white/[0.025] border border-champagne/15 text-center">
+              <p class="text-xs text-silverFrost">Анкеты по выбранному фильтру не найдены.</p>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = "";
+        filtered.forEach((p) => {
+          const isBanned = p.banned === true;
+          const card = document.createElement("div");
+          card.className = `p-3.5 rounded-2xl border transition space-y-2.5 ${
+            isBanned
+              ? "bg-crimsonRose/[0.06] border-crimsonRose/40"
+              : "bg-white/[0.035] border-champagne/20"
+          }`;
+
+          card.innerHTML = `
+            <div class="flex items-start gap-3">
+              <img
+                src="${p.photo}"
+                alt="${escapeHtml(p.name)}"
+                onerror="handleImgError(this, '${escapeHtml(p.name)}')"
+                class="w-16 h-20 rounded-xl object-cover shrink-0 border border-white/15"
+              />
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-1">
+                  <h4 class="text-sm font-bold text-ivory truncate">
+                    ${escapeHtml(p.name)}, ${p.age}
+                  </h4>
+                  <span class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider shrink-0 ${
+                    isBanned
+                      ? "bg-crimsonRose/20 text-crimsonRose border border-crimsonRose/40"
+                      : "bg-emerald-500/15 text-emerald-300 border border-emerald-400/30"
+                  }">
+                    ${isBanned ? "Забанен" : "Активна"}
+                  </span>
+                </div>
+                <p class="text-[11px] text-champagne mt-0.5">
+                  ${escapeHtml(p.gender)} • ${escapeHtml(
+            p.university
+          )} • ${escapeHtml(p.goal)}
+                </p>
+                <p class="text-xs text-silverFrost mt-1 line-clamp-2">
+                  ${escapeHtml(p.bio)}
+                </p>
+              </div>
+            </div>
+
+            <!-- Контакты гостя (всегда видны администратору) -->
+            <div class="flex flex-wrap gap-1.5 text-[11px]">
+              ${
+                p.telegram
+                  ? `<button type="button" data-copy="${escapeHtml(
+                      p.telegram
+                    )}" class="copy-contact-btn px-2.5 py-1 rounded-lg bg-obsidian/70 border border-champagne/25 text-ivory hover:border-champagne">
+                      TG: <span class="text-champagne">${escapeHtml(
+                        p.telegram
+                      )}</span>
+                    </button>`
+                  : ""
+              }
+              ${
+                p.instagram
+                  ? `<button type="button" data-copy="${escapeHtml(
+                      p.instagram
+                    )}" class="copy-contact-btn px-2.5 py-1 rounded-lg bg-obsidian/70 border border-champagne/25 text-ivory hover:border-champagne">
+                      IG: <span class="text-champagne">${escapeHtml(
+                        p.instagram
+                      )}</span>
+                    </button>`
+                  : ""
+              }
+            </div>
+
+            <!-- Действия модератора: Забанить/Разбанить и Удалить -->
+            <div class="flex gap-2 pt-0.5">
+              <button
+                type="button"
+                data-ban-uid="${p.uid}"
+                data-next-ban="${!isBanned}"
+                class="btn-admin-toggle-ban flex-1 py-2 rounded-xl text-xs font-medium transition ${
+                  isBanned
+                    ? "bg-emerald-500/15 border border-emerald-400/40 text-emerald-200 hover:bg-emerald-500/25"
+                    : "glass-pill text-champagne"
+                }"
+              >
+                ${isBanned ? "✓ Разбанить" : "⛔ Забанить"}
+              </button>
+              <button
+                type="button"
+                data-del-uid="${p.uid}"
+                data-del-name="${escapeHtml(p.name)}"
+                class="btn-admin-delete-user px-4 py-2 rounded-xl btn-crimson text-xs font-medium"
+              >
+                Удалить
+              </button>
+            </div>
+          `;
+
+          bindCopyButtons(card);
+          container.appendChild(card);
+        });
+
+        container.querySelectorAll(".btn-admin-toggle-ban").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const targetUid = btn.dataset.banUid;
+            const nextBan = btn.dataset.nextBan === "true";
+            toggleBanUser(targetUid, nextBan);
+          });
+        });
+
+        container.querySelectorAll(".btn-admin-delete-user").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            promptDeleteProfile(
+              btn.dataset.delUid,
+              false,
+              btn.dataset.delName
+            );
+          });
+        });
+      }
+
+      async function toggleBanUser(targetUid, shouldBan) {
+        if (!STATE.user || !STATE.db) return;
+        try {
+          await updateDoc(getProfileDocRef(targetUid), { banned: shouldBan });
+          showToast(
+            shouldBan
+              ? "Пользователь заблокирован и скрыт из ленты"
+              : "Пользователь разблокирован"
+          );
+        } catch (err) {
+          console.error("Ошибка при смене статуса бана:", err);
+          showToast(formatFirebaseErrorRu(err));
+        }
+      }
+
+      /* ===========================================================
+         16. МОДАЛКА ПОДТВЕРЖДЕНИЯ УДАЛЕНИЯ АНКЕТЫ
+      =========================================================== */
+      function promptDeleteProfile(targetUid, isSelf, name) {
+        STATE.pendingDeleteTarget = { uid: targetUid, isSelf, name };
+        document.getElementById("confirm-delete-title").textContent = isSelf
+          ? "Удалить вашу анкету?"
+          : `Удалить анкету «${name}»?`;
+        document.getElementById("confirm-delete-desc").textContent = isSelf
+          ? "Ваша анкета и все ваши симпатии будут удалены без возможности восстановления."
+          : "Анкета гостя и все связанные лайки и мэтчи будут навсегда удалены из базы бала.";
+        document
+          .getElementById("modal-confirm-delete")
+          .classList.remove("hidden");
+      }
+
+      document
+        .getElementById("btn-cancel-delete")
+        .addEventListener("click", () => {
+          STATE.pendingDeleteTarget = null;
+          document
+            .getElementById("modal-confirm-delete")
+            .classList.add("hidden");
+        });
+
+      document
+        .getElementById("btn-confirm-delete")
+        .addEventListener("click", async () => {
+          const target = STATE.pendingDeleteTarget;
+          if (!target || !STATE.user || !STATE.db) return;
+
+          document
+            .getElementById("modal-confirm-delete")
+            .classList.add("hidden");
+          STATE.pendingDeleteTarget = null;
+
+          try {
+            await deleteDoc(getProfileDocRef(target.uid));
+
+            const relatedInteractions = STATE.allInteractions.filter(
+              (item) =>
+                item.fromUid === target.uid || item.toUid === target.uid
+            );
+            for (const item of relatedInteractions) {
+              await deleteDoc(getInteractionDocRef(item.id));
+            }
+
+            if (target.isSelf) {
+              setPhotoPreview("");
+              document.getElementById("profile-form").reset();
+              bioCounter.textContent = "0 / 180";
+            }
+
+            showToast("Анкета и связанные данные удалены");
+          } catch (err) {
+            console.error("Ошибка удаления анкеты:", err);
+            showToast(formatFirebaseErrorRu(err));
+          }
+        });
+
+      /* ===========================================================
+         17. ФОНОВЫЙ CANVAS: СЕРЕБРЯНЫЙ СНЕГ И ЗВЁЗДНОЕ МЕРЦАНИЕ
+      =========================================================== */
+      function initWinterCanvas() {
+        const canvas = document.getElementById("winter-canvas");
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+
+        let width = 0;
+        let height = 0;
+        let particles = [];
+
+        function resizeCanvas() {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+          const count = Math.min(80, Math.floor((width * height) / 13500));
+          particles = Array.from({ length: count }, () => ({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            r: 0.7 + Math.random() * 1.9,
+            speedY: 0.16 + Math.random() * 0.42,
+            speedX: (Math.random() - 0.5) * 0.22,
+            alpha: 0.18 + Math.random() * 0.52,
+            isGold: Math.random() < 0.24,
+            phase: Math.random() * Math.PI * 2,
+          }));
+        }
+
+        resizeCanvas();
+        window.addEventListener("resize", resizeCanvas);
+
+        function animateSnow() {
+          ctx.clearRect(0, 0, width, height);
+
+          for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            p.y += p.speedY;
+            p.x += p.speedX + Math.sin(p.phase) * 0.12;
+            p.phase += 0.012;
+
+            if (p.y > height + 5) {
+              p.y = -5;
+              p.x = Math.random() * width;
+            }
+            if (p.x > width + 5) p.x = -5;
+            if (p.x < -5) p.x = width + 5;
+
+            const twinkle = 0.75 + Math.sin(p.phase * 2) * 0.25;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = p.isGold
+              ? `rgba(212, 175, 122, ${p.alpha * twinkle})`
+              : `rgba(245, 247, 250, ${p.alpha * twinkle})`;
+            ctx.fill();
+          }
+
+          requestAnimationFrame(animateSnow);
+        }
+
+        animateSnow();
+      }
+
+      /* ===========================================================
+         18. ЗАПУСК ПРИЛОЖЕНИЯ ПОСЛЕ ЗАГРУЗКИ ОКНА
+      =========================================================== */
+      window.onload = function () {
+        initWinterCanvas();
+        initFirebase();
+      };
+    </script>
+  </body>
+</html>
